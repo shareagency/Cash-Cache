@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+// Express can launch a www executable to handle certain tasks.
+// www goes in bin (sometimes .bin to keep it hidden)
+
+// we bring in the app and server we exported from server.js
+var app = require('../app');
+
+// we set the port of the app
+app.set('port', process.env.PORT || 3000);
+
+// set our app to listen to the port we set above
+var server = app.listen(app.get('port'), function() {
+	// then save a log of the listening to our debugger.
+  console.log('Express server listening on port ' + server.address().port);
+});

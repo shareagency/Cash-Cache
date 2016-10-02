@@ -1,0 +1,33 @@
+{
+  "name": "cash-cache",
+  "version": "1.0.0",
+  "description": "Final project",
+  "main": "bin/www",
+  "scripts": {
+    "start": "node bin/www",
+    "serve": "nodemon bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattbajorek/Cash-Cache.git"
+  },
+  "author": "Matt Bajorek, Jeff Abraham, Adam Mattas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattbajorek/Cash-Cache/issues"
+  },
+  "homepage": "https://github.com/mattbajorek/Cash-Cache#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "mongoose": "^4.6.2",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-remember-me": "0.0.1",
+    "serve-favicon": "^2.3.0"
+  }
+}
