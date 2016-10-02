@@ -4,29 +4,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var passport = require('passport');
 
 // Initialize Express app
 var express = require('express');
 var app = express();
 
-// Require mongoose and mongodb objectid
+// Require mongoose and passport
 var mongoose = require('mongoose');
-
-// Database configuration
-mongoose.connect('mongodb://localhost/cashcache');
-var db = mongoose.connection;
-
-// Show any mongoose errors
-db.on('error', function(err) {
-  console.log('Database Error:', err);
-});
-
-// Config Passport
+var passport = require('passport');
 require('./config/passport')(passport); // pass passport for configuration
-
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(process.cwd() + '/public'));
 
 // Set up middleware
 // app.use(favicon(__dirname + '/public/favicon.ico')); // uncomment after placing your favicon in /public
@@ -36,7 +22,7 @@ app.use(bodyParser.urlencoded({ // body parser for reading body requests
 	extended: false
 }));
 
-// Required for passport
+// Set up passport middleware
 app.use(session({
 	secret: require('./config/secret'), // session secret
 	resave: true,
@@ -46,9 +32,18 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(passport.authenticate('remember-me'));
 
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + '/public'));
+
+// Database configuration
+mongoose.connect('mongodb://localhost/cashcache', function(err) {
+  if (err) {
+    console.log('Database Error:', err);
+  }
+});
+
 // Routing
-var routes = require('./controllers/router');
-app.use('/', routes);
+app.use('/', require('./router'));
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -67,5 +62,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-module.exports.app = app;
-module.exports.server = server;
+module.exports = app;
