@@ -15,7 +15,7 @@ var login = require('./controllers/login');
 // HOME PAGE (with login links) ========
 // =====================================
 router.get('/', function(req, res) {
-	res.sendFile(path.join(__dirname, 'index.html'))
+	res.sendFile(path.join(__dirname, './public', 'index.html'));
 });
 
 // =====================================
