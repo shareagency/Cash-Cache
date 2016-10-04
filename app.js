@@ -18,6 +18,7 @@ require('./config/passport')(passport); // pass passport for configuration
 // app.use(favicon(__dirname + '/public/favicon.ico')); // uncomment after placing your favicon in /public
 app.use(logger('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ // body parser for reading body requests
 	extended: false
 }));
@@ -36,10 +37,12 @@ app.use(passport.authenticate('remember-me'));
 app.use(express.static(process.cwd() + '/public'));
 
 // Database configuration
-mongoose.connect('mongodb://localhost/cashcache', function(err) {
-  if (err) {
-    console.log('Database Error:', err);
-  }
+var uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/cashcache';
+mongoose.connect(uristring, function(err) {
+  if (err)
+    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  else
+    console.log ('Succeeded connected to: ' + uristring);
 });
 
 // Routing
