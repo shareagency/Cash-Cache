@@ -50,6 +50,6 @@ router.get('/logout', function(req, res) {
 // ===============================================
 // ===== coin input from Raspberry Pi server =====
 // ===============================================
-router.post('/insert', coinInput);
+router.post('/coin', coinInput);
 
 module.exports = router;
