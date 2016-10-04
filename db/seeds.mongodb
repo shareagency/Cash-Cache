@@ -1,0 +1,3 @@
+use cashcache
+db.users.insert({username: 'user', password: 'password', coins: {nickels: 0, pennies: 0, dimes: 0, quarters: 0}})
+db.users.update({username: 'user'}, {$set: {coins: {nickels: 0, pennies: 0, dimes: 0, quarters: 0}}})
