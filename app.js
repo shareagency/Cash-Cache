@@ -11,6 +11,7 @@ var app = express();
 
 // Require mongoose and passport
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 var passport = require('passport');
 require('./config/passport')(passport); // pass passport for configuration
 
