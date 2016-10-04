@@ -12,7 +12,13 @@ var UserSchema = Schema({
 	password: {
 		type: String,
 		required: true
-	}
+	},
+	coins: {
+    pennies: { type: Number, default: 0 },
+		nickels: { type: Number, default: 0 },
+    dimes:  { type: Number, default: 0 },
+		quarters: { type: Number, default: 0 }
+  }
 });
 
 // use the above schema to make the User model
