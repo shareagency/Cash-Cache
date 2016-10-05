@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cash Cache</title>
+  <title>Cash Cache</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -51,30 +51,34 @@
 
     <div class="charting">
 
-      <div>
-        <img class="chart-pic" src="assets/images/chart.png">
-      </div>
+      <h4><span class="fa fa-sign-in"></span> Log in or Sign up below:</h4>
 
-      <div class="row">
-        <div class="col-md-4 col-pad">
-          <div class="home-img-wrap">
-            <p class="home-img-title">Achieve Your Goals</p>
-            <img class="home-img" src="assets/images/goals.jpg">
-          </div>
+      <!-- show any messages that come back with authentication -->
+      <div id="message"></div>
+
+      <!-- LOGIN FORM -->
+      <form id="credentials">
+
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" class="form-control" name="username">
         </div>
-        <div class="col-md-4 col-pad">
-          <div class="home-img-wrap">
-            <p class="home-img-title">Stay Motivated</p>
-            <img class="home-img" src="assets/images/motivated.jpg">
-          </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password">
         </div>
-        <div class="col-md-4 col-pad">
-          <div class="home-img-wrap">
-            <p class="home-img-title">Grow Your Savings</p>
-            <img class="home-img" src="assets/images/invest.jpg">
-          </div>
+        
+        <label class="checkbox-inline">
+          <input type="checkbox" name="remember" value="yes">Remember Me
+        </label>
+
+        <div class="group">
+          <button type="submit" class="btn btn-info btn-lg" id="login">Log in</button>
+          <button type="submit" class="btn btn-info btn-lg" id="signup">Sign up</button>
         </div>
-      </div>
+
+      </form>
 
     </div>
 

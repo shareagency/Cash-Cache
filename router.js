@@ -20,6 +20,13 @@ router.get('/', function(req, res) {
 });
 
 // =====================================
+// LOGIN PAGE ==========================
+// =====================================
+router.get('/login', function(req, res) {
+  res.sendFile(path.join(__dirname, './public', 'login.html'));
+});
+
+// =====================================
 // LOGIN ===============================
 // =====================================
 // process the login form
