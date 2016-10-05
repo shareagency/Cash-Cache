@@ -10,6 +10,7 @@ var passport = require('passport');
 var isLoggedIn = require('./controllers/isLoggedIn');
 var signup = require('./controllers/signup');
 var login = require('./controllers/login');
+var coinInput = require('./controllers/coinInput');
 
 // =====================================
 // HOME PAGE (with login links) ========
@@ -52,5 +53,10 @@ router.get('/logout', function(req, res) {
 	req.logout();
 	res.redirect('/');
 });
+
+// ===============================================
+// ===== coin input from Raspberry Pi server =====
+// ===============================================
+router.post('/coin', coinInput);
 
 module.exports = router;
