@@ -13,7 +13,7 @@ var app = express();
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 var passport = require('passport');
-require('./config/passport')(passport); // pass passport for configuration
+require('../config/passport')(passport); // pass passport for configuration
 
 // Set up middleware
 // app.use(favicon(__dirname + '/public/favicon.ico')); // uncomment after placing your favicon in /public
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ // body parser for reading body requests
 
 // Set up passport middleware
 app.use(session({
-	secret: require('./config/secret'), // session secret
+	secret: require('../config/secret'), // session secret
 	resave: true,
 	saveUninitialized: true
 }));
@@ -34,8 +34,22 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(passport.authenticate('remember-me'));
 
+// Webpack middleware
+if (process.env.NODE_ENV === 'production') {
+  var compression = require('compression');
+  app.use(compression());
+} else {
+  var config = require('../webpack.config.dev');
+  var webpack = require('webpack');
+  var webpackDevMiddleware = require('webpack-dev-middleware');
+  var webpackHotMiddleware = require('webpack-hot-middleware');
+  var compiler = webpack(config);
+  app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
+  app.use(webpackHotMiddleware(compiler));
+}
+
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(process.cwd() + '/public'));
+app.use(express.static(process.cwd() + '/dist'));
 
 // Database configuration
 var uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/cashcache';

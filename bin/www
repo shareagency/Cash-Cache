@@ -4,7 +4,7 @@
 // www goes in bin (sometimes .bin to keep it hidden)
 
 // we bring in the app and server we exported from server.js
-var app = require('../app');
+var app = require('../server/server');
 
 // we set the port of the app
 app.set('port', process.env.PORT || 3000);
