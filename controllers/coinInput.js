@@ -4,8 +4,8 @@ var User = require('../models/userModel');
 module.exports = function(req, res) {
 
   // determin coin value
-  let coinValue = req.body.coinValue;
-  let coinType = req.body.coinType
+  var coinValue = req.body.coinValue;
+  var coinType = req.body.coinType;
   console.log('posted coin value: ',coinValue);
 
   // if coin value could not be determined log and respond with error

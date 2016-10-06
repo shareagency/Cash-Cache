@@ -7,23 +7,23 @@ var path = require('path');
 var passport = require('passport');
 
 // Controllers
-var isLoggedIn = require('./controllers/isLoggedIn');
-var signup = require('./controllers/signup');
-var login = require('./controllers/login');
-var coinInput = require('./controllers/coinInput');
+var isLoggedIn = require('../controllers/isLoggedIn');
+var signup = require('../controllers/signup');
+var login = require('../controllers/login');
+var coinInput = require('../controllers/coinInput');
 
 // =====================================
 // HOME PAGE (with login links) ========
 // =====================================
 router.get('/', function(req, res) {
-	res.sendFile(path.join(__dirname, './public', 'index.html'));
+	res.sendFile(path.resolve('client/index.html'));
 });
 
 // =====================================
 // LOGIN PAGE ==========================
 // =====================================
 router.get('/login', function(req, res) {
-  res.sendFile(path.join(__dirname, './public', 'login.html'));
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
 // =====================================
