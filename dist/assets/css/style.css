@@ -13,9 +13,9 @@ body{
   margin: 0px;
 }
 
-h1{
+h1{ 
   display: block;
-  font-size: 2em;
+  font-size: 4em;
   margin-top: 0.67em;
   margin-bottom: 0.67em;
   margin-left: 0;
@@ -33,7 +33,7 @@ h2 {
     font-weight: bold;
 }
 
-h3 {
+h3 { 
     display: block;
     font-size: 1.17em;
     margin-top: 1em;
@@ -72,6 +72,29 @@ h3 {
   width: 100%;
 }
 /*begin navbar overrides*/
+.pad-right-125{
+  padding-right: 125px;
+}
+
+.pad-left-25{
+  padding-left: 30px;
+}
+
+.marg-neg-20{
+  margin-left: -20px;
+}
+
+.marg-bottom-32{
+  margin-bottom: 32px;
+}
+
+.no-marg-bottom{
+  margin-bottom: 0px;
+}
+
+.line-pad{
+  line-height: 30px;
+}
 
 .float-right{
   float: right;
@@ -97,6 +120,23 @@ h3 {
   margin: 0 auto;
 }
 
+.logo-dollar{
+  position: absolute;
+  top: 21px;
+  left: 105px;
+  width: 80px;
+  z-index: 102;
+}
+
+.logo-text{
+  position: relative;
+  top: 15px;
+  /*left: 205px;*/
+  color: #ffffff;
+  font-size: 35px;
+  z-index: 100;
+}
+
 .circle{
   position: absolute;
   top: 0;
@@ -119,14 +159,16 @@ h3 {
 }
 
 .cash-nav{
-  margin-left: 20px;
+  margin-left: 5px;
   color: #ffffff;
   font-size: 20px;
+  padding: 26px 15px 30px 15px;
 }
 
 .cash-nav:hover{
   text-decoration: none;
-  color: #000000;
+  color: #008000;
+  background-color: #000000;
 }
 
 .resp-cash-nav{
@@ -162,19 +204,97 @@ h3 {
   z-index: 99;
 }
 
-/*Begin Line Chart Style*/
+/*Begin Sign Up Style*/
 .charting{
+  position: relative;
   width: 75%;
   margin: 0 auto;
+  z-index: 100;
+  /*border: 1px solid red;*/
 }
 
-.chart-pic{
-  position: relative;
+.marg-top{
   margin-top: 50px;
-  margin-bottom: 50px;
-  width: 100%;
 }
-/*Begin Line Chart Style*/
+
+.money-input{
+  float: left;
+  margin-right: 25px;
+  color: #ffffff;
+  font-size: 25px;
+  background: url("../images/money_input2.png") no-repeat;
+  width: 434px;
+  height: 54px;
+}
+
+.money-input:focus{
+  border-color: #008000;
+  box-shadow: 0 0 10px #008000;
+}
+
+.money-input::-webkit-input-placeholder {
+   color: #ffffff;
+}
+
+.money-input:-moz-placeholder { /* Firefox 18- */
+   color: #ffffff;  
+}
+
+.money-input::-moz-placeholder {  /* Firefox 19+ */
+   color: #ffffff;  
+}
+
+.money-input:-ms-input-placeholder {  
+   color: #ffffff;  
+}
+
+.form-control{
+  border: none;
+}
+
+.user-square{
+  width: 54px;
+  height: 54px;
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 5px;
+}
+
+.terms-link{
+  color: #008000;
+}
+
+.terms-link:hover{
+  text-decoration: none;
+  color: #008000;
+}
+
+.terms-text{
+  font-weight: bold;
+  font-size: 16.9px;
+}
+
+.user-square-check {
+  float: left;
+  margin-bottom: 25px;
+  width: 54px;
+  height: 54px;
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  margin-right: 25px;
+}
+
+.sub-sign{
+  width: 436px;
+  height: 55px;
+  background: url("../images/money_button_dark.png") no-repeat;
+}
+
+.sub-sign:hover{
+  background: url("../images/money_button_light.png") no-repeat;
+}
+/*End Sign Up Style*/
 
 .outline{
   border: 1px solid red;
@@ -182,7 +302,7 @@ h3 {
 
 .col-pad{
   position: relative;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 15px 0px 15px;
   z-index: 100;
 }
 
@@ -192,8 +312,8 @@ h3 {
   padding: 50px 15px 15px 15px;
   margin-bottom: 15px;
   border: 3px solid #000000;
-  /*background-color: #ffffff;*/
-  background-color: rgba(255,255,255,0.7);
+  /*background-color: rgba(255,255,255,0.7);*/
+  background-color: rgba(223,225,223,0.5);
   background-blend-mode: screen;
 }
 
