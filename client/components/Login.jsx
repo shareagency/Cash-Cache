@@ -3,7 +3,7 @@ import Input from 'react-toolbox/lib/input';
 import {Button} from 'react-toolbox/lib/button';
 import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 
-export default React.Component {
+export class Login extends React.Component {
   constructor() {
     super();
     this.state = { username: '', password: ''};
