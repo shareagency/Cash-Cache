@@ -45,3 +45,19 @@ function navToggle() {
 
 var navSwitch = document.getElementById('nav-switch');
 navSwitch.addEventListener('click', navToggle, false)
+
+function checkToggle() {
+  var termSecondary = document.getElementById('terms-select');
+  var className = termSecondary.getAttribute("class");
+  if(className == "show terms-check") {
+    termSecondary.className = "hide terms-check";
+    termSecondary.setAttribute("data-check", "unchecked");
+  }
+  else{
+    termSecondary.className = "show terms-check";
+    termSecondary.setAttribute("data-check", "checked");
+  }
+}
+
+var termSwitch = document.getElementById('terms');
+termSwitch.addEventListener('click', checkToggle, false)

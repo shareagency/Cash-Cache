@@ -72,7 +72,7 @@ h3 {
    }
    .navbar-toggle {
       display: block;
-  }
+    }
 }
 
 @media only screen and (min-width: 990px) {
@@ -294,9 +294,34 @@ h3 {
 .user-square{
   width: 54px;
   height: 54px;
+  padding: 3px;
   background-color: #ffffff;
   border: 3px solid #000000;
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 1655px) {
+  .user-square {
+    display: none;
+  }
+}
+
+.signal-color{
+  width: 43px;
+  height: 43px;
+  border-radius: 5px;
+}
+
+.weak{
+  background-color: red;
+}
+
+.mod{
+  background-color: yellow;
+}
+
+.strong{
+  background-color: #008000;
 }
 
 .terms-link{
@@ -316,12 +341,17 @@ h3 {
 .user-square-check {
   float: left;
   margin-bottom: 25px;
+  padding: 3px;
   width: 54px;
   height: 54px;
   background-color: #ffffff;
   border: 3px solid #000000;
   border-radius: 5px;
   margin-right: 25px;
+}
+
+.terms-check{
+  width: 43px;
 }
 
 .sub-sign{
