@@ -11,10 +11,10 @@ export default React.createClass({
         <div className="col-md-7 pad-right-125">
 
           <h1 className="marg-bottom-32">Start Saving Today!</h1>
-          <h3 className="line-pad">Cash Cache is a smart piggy bank with features and tools to help you track and grow your savings.</h3>
-          <h3 className="line-pad">Set goals for yourself and share your achievements with your friends and family members on social media.</h3>
-          <h3 className="line-pad">Customize your profile with inspirational imagery and notes to stay motivated and keep your eye on the prize.</h3>
-          <h3 className="line-pad">Gain access to helpful tips and information to assist you along your savings journey.</h3>
+          <h2 className="line-pad">Cash Cache is a smart piggy bank with features and tools to help you track and grow your savings.</h2>
+          <h2 className="line-pad">Set goals for yourself and share your achievements with your friends and family members on social media.</h2>
+          <h2 className="line-pad">Customize your profile with inspirational imagery and notes to stay motivated and keep your eye on the prize.</h2>
+          <h2 className="line-pad">Gain access to helpful tips and information to assist you along your savings journey.</h2>
           
         </div>
         <div className="pad-left-25 col-md-5">
