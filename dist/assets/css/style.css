@@ -66,12 +66,27 @@ h3 {
   border: none;
 }
 
+@media only screen and (max-width: 990px) {
+   .navbar-collapse.collapse {
+      display: none !important;
+   }
+   .navbar-toggle {
+      display: block;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+   #navbar1 {
+      display: none;
+   }
+}
+
 .divider{
   background-color: #ffffff;
   height: 1px;
   width: 100%;
 }
-/*begin navbar overrides*/
+/*end navbar overrides*/
 .pad-right-125{
   padding-right: 125px;
 }
@@ -100,7 +115,11 @@ h3 {
   float: right;
 }
 
-.hidden{
+.show{
+  display: block;
+}
+
+.hide{
   display: none;
 }
 
