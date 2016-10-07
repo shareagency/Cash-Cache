@@ -27,9 +27,7 @@ export default React.createClass({
                   <a className="cash-nav" href="/">Home</a>
                   <a className="cash-nav" href="/about">About</a>
                   <a className="cash-nav" href="/tools">Tools</a>
-                  <LinkContainer to={{ pathname: '/login'}}>
-                    <a className="cash-nav">Log In</a>
-                  </LinkContainer>
+                  <Link to="/login" className="cash-nav">Login</Link>
                   <a className="cash-nav" href="/signup">Sign Up</a>
               </div>
             </div>
@@ -45,9 +43,7 @@ export default React.createClass({
           <li className="li-pad"><a className="resp-cash-nav" href="/tools">Tools</a></li>
           <li role="separator" className="divider"></li>
           <li className="li-pad">
-            <LinkContainer to={{ pathname: '/login'}}>
-              <a className="resp-cash-nav">Log In</a>
-            </LinkContainer>
+            <Link to="/login" className="resp-cash-nav">Login</Link>
           </li>
           <li role="separator" className="divider"></li>
           <li className="li-pad"><a className="resp-cash-nav" href="/signup">Sign Up</a></li>
