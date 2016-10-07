@@ -32,7 +32,8 @@
               <a class="cash-nav" href="/">Home</a>
               <a class="cash-nav" href="/about">About</a>
               <a class="cash-nav" href="/tools">Tools</a>
-              <a class="cash-nav" href="/login">Login</a>
+              <a class="cash-nav" href="/login">Log In</a>
+              <a class="cash-nav" href="/signup">Sign Up</a>
           </div>
         </div>
 
@@ -46,16 +47,72 @@
       <li role="separator" class="divider"></li>
       <li class="li-pad"><a class="resp-cash-nav" href="/tools">Tools</a></li>
       <li role="separator" class="divider"></li>
-      <li class="li-pad"><a class="resp-cash-nav" href="/login">Login</a></li>
+      <li class="li-pad"><a class="resp-cash-nav" href="/login">Log In</a></li>
+      <li role="separator" class="divider"></li>
+      <li class="li-pad"><a class="resp-cash-nav" href="/signup">Sign Up</a></li>
     </ul>
 
     <div class="charting">
 
-      <div>
-        <img class="chart-pic" src="assets/images/chart.png">
+      <div class="row">
+        <!-- <img class="chart-pic" src="assets/images/chart.png"> -->
+        <div class="col-md-7 pad-right-125">
+
+          <h1 class="marg-bottom-32">Start Saving Today!</h1>
+          <h2 class="line-pad">Cash Cache is a smart piggy bank with features and tools to help you track and grow your savings.</h2>
+          <h2 class="line-pad">Set goals for yourself and share your achievements with your friends and family members on social media.</h2>
+          <h2 class="line-pad">Customize your profile with inspirational imagery and notes to stay motivated and keep your eye on the prize.</h2>
+          <h2 class="line-pad">Gain access to helpful tips and information to assist you along your savings journey.</h2>
+          
+        </div>
+        <div class="pad-left-25 col-md-5">
+
+          <h1 class="marg-neg-20">User Sign Up</h1>
+          <!-- show any messages that come back with authentication -->
+          <div id="message"></div>
+
+          <!-- LOGIN FORM -->
+          <form id="credentials">
+
+            <div class="form-group">
+              <div class="row">
+                <input type="text" class="form-control money-input" name="email" placeholder="Your Email Address">             
+                <label class="user-square"></label>  
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <input type="text" class="form-control money-input" name="username" placeholder="Choose a username">             
+                <label class="user-square"></label>  
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <input type="password" class="form-control money-input" name="password" placeholder="Create a password">
+                <label class="user-square"></label> 
+              </div>
+            </div>
+            
+            <!-- <label>Remember Me
+              <input class="user-square-check" type="checkbox" name="remember" value="yes">
+            </label> -->
+
+            <div class="form-group">
+              <div class="row">
+                <p class="terms-text">I have read and agree to the <span><a class="terms-link" href="#">Cash Cache terms of use.</a></span></p>
+                <div id="terms" class="user-square-check"></div>
+              <!-- <button type="submit" class="btn btn-info btn-lg" id="login">Log in</button> -->
+                <button type="submit" class="btn sub-sign" id="signup"></button>
+              </div>
+            </div>
+
+          </form>
+        </div>
       </div>
 
-      <div class="row">
+      <!-- <div class="row marg-top">
         <div class="col-md-4 col-pad">
           <div class="home-img-wrap">
             <p class="home-img-title">Achieve Your Goals</p>
@@ -74,7 +131,7 @@
             <img class="home-img" src="assets/images/invest.jpg">
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
 
