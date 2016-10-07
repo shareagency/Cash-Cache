@@ -1,8 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Link } from 'react-router'
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from "react-bootstrap"
-import {LinkContainer} from 'react-router-bootstrap'
+import { Link } from 'react-router';
 
 export default React.createClass({
   render() {
@@ -10,6 +8,7 @@ export default React.createClass({
       <div className="page-wrap">
         <div className="circle"></div>
         <img className="logo-dollar" src="assets/images/cc_grade.png" />
+        <span className="logo-text">CASH CACHE</span>
 
         <nav className="header navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -21,13 +20,12 @@ export default React.createClass({
             </button>
 
             <div className="head-wrap">
-              <span className="logo-text">CASH CACHE</span>
 
               <div id="navbar" className="navbar-collapse collapse cash-nav-wrap float-right">
                   <a className="cash-nav" href="/">Home</a>
                   <a className="cash-nav" href="/about">About</a>
                   <a className="cash-nav" href="/tools">Tools</a>
-                  <a className="cash-nav" href="/login">Log In</a>
+                  <Link to="/login" className="cash-nav">Login</Link>
                   <a className="cash-nav" href="/signup">Sign Up</a>
               </div>
             </div>
@@ -42,7 +40,9 @@ export default React.createClass({
           <li role="separator" className="divider"></li>
           <li className="li-pad"><a className="resp-cash-nav" href="/tools">Tools</a></li>
           <li role="separator" className="divider"></li>
-          <li className="li-pad"><a className="resp-cash-nav" href="/login">Log In</a></li>
+          <li className="li-pad">
+            <Link to="/login" className="resp-cash-nav">Login</Link>
+          </li>
           <li role="separator" className="divider"></li>
           <li className="li-pad"><a className="resp-cash-nav" href="/signup">Sign Up</a></li>
         </ul>
