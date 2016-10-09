@@ -66,12 +66,27 @@ h3 {
   border: none;
 }
 
+@media only screen and (max-width: 990px) {
+   .navbar-collapse.collapse {
+      display: none !important;
+   }
+   .navbar-toggle {
+      display: block;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+   #navbar1 {
+      display: none;
+   }
+}
+
 .divider{
   background-color: #ffffff;
   height: 1px;
   width: 100%;
 }
-/*begin navbar overrides*/
+/*end navbar overrides*/
 .pad-right-125{
   padding-right: 125px;
 }
@@ -100,7 +115,11 @@ h3 {
   float: right;
 }
 
-.hidden{
+.show{
+  display: block;
+}
+
+.hide{
   display: none;
 }
 
@@ -155,6 +174,16 @@ h3 {
       top: 40px;
       font-size: 30px;
     }
+}
+
+.penny-img{
+  position: absolute;
+  top: 6px;
+  left: 88px;
+  width: 113px;
+  height: 113px;
+  background: url("../images/penny.png") no-repeat;
+  z-index: 103;
 }
 
 .circle{
@@ -275,9 +304,34 @@ h3 {
 .user-square{
   width: 54px;
   height: 54px;
+  padding: 3px;
   background-color: #ffffff;
   border: 3px solid #000000;
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 1655px) {
+  .user-square {
+    display: none;
+  }
+}
+
+.signal-color{
+  width: 43px;
+  height: 43px;
+  border-radius: 5px;
+}
+
+.weak{
+  background-color: red;
+}
+
+.mod{
+  background-color: yellow;
+}
+
+.strong{
+  background-color: #008000;
 }
 
 .terms-link{
@@ -297,12 +351,17 @@ h3 {
 .user-square-check {
   float: left;
   margin-bottom: 25px;
+  padding: 3px;
   width: 54px;
   height: 54px;
   background-color: #ffffff;
   border: 3px solid #000000;
   border-radius: 5px;
   margin-right: 25px;
+}
+
+.terms-check{
+  width: 43px;
 }
 
 .sub-sign{

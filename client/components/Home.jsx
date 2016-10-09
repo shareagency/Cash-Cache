@@ -1,7 +1,85 @@
 import React from 'react'
 import { Link } from 'react-router'
+// Helper Function
+var helpers = require('./utils/helpers.js');
 
 export default React.createClass({
+  // Here we set a generic state associated with the text being searched for
+  getInitialState(){
+    return {
+      email: "",
+      username: "",
+      password: "",
+      strength: "signal-color",
+      checked: "unchecked",
+      checkImg: "hide terms-check"
+    }
+  },
+
+  // This function will respond to the user input 
+  handleBlur(event){
+
+    var sentVal = event.target.value;
+    var sentId = event.target.name;
+
+    console.log(sentVal, sentId);
+
+    if(sentId == "username"){
+      helpers.checkUser(sentVal)
+        .then(function(data){
+          //checks if there are results sent back from api
+          console.log(data);
+
+        });
+      } else if(sentId == "email"){
+        helpers.checkEmail(sentVal)
+        .then(function(data){
+          //checks if there are results sent back from api
+          console.log(data);
+
+        }); 
+      }
+
+  },
+
+  // This function will respond to the user input 
+  handleChange(event){
+
+    var passVal = event.target.value;
+
+    if(passVal.length <= 5){
+      this.setState({
+        strength: "signal-color weak"
+      })
+    }else if(passVal.length > 5 && passVal.length <= 8){
+      this.setState({
+        strength: "signal-color mod"
+      })
+    }else if(passVal.length > 8){
+      this.setState({
+        strength: "signal-color strong"
+      })  
+    }
+
+  },
+
+  checkToggle(){
+
+    if(this.state.checked == "checked") {
+      this.setState({
+        checked: "unchecked",
+        checkImg: "hide terms-check"
+      })
+    }
+    else{
+      this.setState({
+        checked: "checked",
+        checkImg: "show terms-check"
+      })
+    }
+
+  },
+
   render() {
     return (
       <div>
@@ -27,29 +105,37 @@ export default React.createClass({
 
               <div className="form-group">
                 <div className="row">
-                  <input type="text" className="form-control money-input" name="email" placeholder="Your Email Address" />             
-                  <label className="user-square"></label>  
+                  <input type="text" className="form-control money-input" name="email" onBlur={this.handleBlur} placeholder="Your Email Address" />             
+                  <label className="user-square">
+                    <div className="signal-color strong"></div>
+                  </label>  
                 </div>
               </div>
 
               <div className="form-group">
                 <div className="row">
-                  <input type="text" className="form-control money-input" name="username" placeholder="Choose a username" />             
-                  <label className="user-square"></label>  
+                  <input type="text" className="form-control money-input" name="username" onBlur={this.handleBlur} placeholder="Choose a username" />             
+                  <label className="user-square">
+                    <div className="signal-color strong"></div>
+                  </label>  
                 </div>
               </div>
 
               <div className="form-group">
                 <div className="row">
-                  <input type="password" className="form-control money-input" name="password" placeholder="Create a password" />
-                  <label className="user-square"></label> 
+                  <input type="password" className="form-control money-input" name="password" onChange={this.handleChange} placeholder="Create a password" />
+                  <label className="user-square">
+                    <div className={this.state.strength}></div>
+                  </label> 
                 </div>
               </div>
 
               <div className="form-group">
                 <div className="row">
                   <p className="terms-text">I have read and agree to the <span><a className="terms-link" href="#">Cash Cache terms of use.</a></span></p>
-                  <div id="terms" className="user-square-check"></div>
+                  <div id="terms" className="user-square-check" onClick={this.checkToggle}>
+                    <img id="terms-select" className={this.state.checkImg} data-check={this.state.checked} src="assets/images/cc_grade.png" />
+                  </div>
                   <button type="submit" className="btn sub-sign" id="signup"></button>
                 </div>
               </div>
