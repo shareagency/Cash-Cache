@@ -44,13 +44,11 @@ export default React.createClass({
             <div className="head-wrap">
 
               <div id="navbar" className="navbar-collapse collapse cash-nav-wrap float-right">
-                  <a className="cash-nav" href="/">Home</a>
+                  <Link to="/" className="cash-nav">Home</Link>
                   <a className="cash-nav" href="/about">About</a>
                   <a className="cash-nav" href="/tools">Tools</a>
-
                   <Link to="/login" className="cash-nav">Login</Link>
-
-                  <a className="cash-nav" href="/signup">Sign Up</a>
+                  <Link to="/signup" className="cash-nav">Sign Up</Link>
               </div>
 
             </div>
@@ -60,19 +58,22 @@ export default React.createClass({
         <div id="navbar1" style={{display: this.state.navDisplay2}}>
           <ul className="resp-nav-wrap">
             <li role="separator" className="divider"></li>
-            <li className="li-pad"><a className="resp-cash-nav" href="/">Home</a></li>
+            <li className="li-pad">
+              <Link to="/" className="resp-cash-nav">Home</Link>
+            </li>
             <li role="separator" className="divider"></li>
             <li className="li-pad"><a className="resp-cash-nav" href="/about">About</a></li>
             <li role="separator" className="divider"></li>
             <li className="li-pad"><a className="resp-cash-nav" href="/tools">Tools</a></li>
             <li role="separator" className="divider"></li>
             <li className="li-pad">
-              <Link to={{ pathname: '/login'}}>
-                <span className="resp-cash-nav">Log In</span>
-              </Link>
+              <Link to="/login" className="resp-cash-nav">Login</Link>
             </li>
             <li role="separator" className="divider"></li>
-            <li className="li-pad"><a className="resp-cash-nav" href="/signup">Sign Up</a></li>
+            <li role="separator" className="divider"></li>
+            <li className="li-pad">
+              <Link to="/signup" className="resp-cash-nav">Sign Up</Link>
+            </li>
           </ul>
         </div>
 
