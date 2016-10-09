@@ -2,9 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
 
-// import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from "react-bootstrap";
-// import {LinkContainer} from 'react-router-bootstrap';
-
 export default React.createClass({
   // Here we set a generic state associated with the text being searched for
   getInitialState() {
@@ -83,6 +80,9 @@ export default React.createClass({
           {this.props.children}
         </div>
 
+        <img className="piggy" src="assets/images/piggy.png" />
+
+        <img className="graph-foot" src="assets/images/graph_grade2.png" />
 
       </div>
 
