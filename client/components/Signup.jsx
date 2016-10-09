@@ -3,7 +3,7 @@ import Input from 'react-toolbox/lib/input';
 import {Button} from 'react-toolbox/lib/button';
 import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 
-export class Login extends React.Component {
+export class Signup extends React.Component {
   constructor() {
     super();
     this.state = { email: '', username: '', password: ''};
@@ -27,7 +27,7 @@ export class Login extends React.Component {
             <Card id="card-login">
               <CardTitle
                 avatar="assets/images/cc_grade.png"
-                title="Login or Sign Up"
+                title="Signup for our free service"
                 subtitle="Required Fields *"
               />
               <CardText>
