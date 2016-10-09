@@ -31,17 +31,13 @@ export class Login extends Component {
     let username = this.state.username.toLowerCase();
     let password = this.state.password;
 
-    validate.login(username, password)
-    .then(function(valData) {
+    validate.login(username, password ,function(valData) {
       if (valData.isValid) {
-        this.handleLogin(username, password);
-        return;
+        return this.handleLogin(username, password);
       }
       this.setState(valData.valMsg);
+      return;
     }.bind(this))
-    .catch(function(err) {
-      console.log('Validation error: ', err);
-    })
   };
 
   // send login post request
@@ -51,13 +47,12 @@ export class Login extends Component {
     .then(function(resData) {
       // display any validation errors
       if (resData.valErr) {
-          this.setState(resData.valErr);
-          return;
+        return this.setState(resData.valErr);
       }
       console.log('Login response: ', JSON.stringify(resData));
       // TODO: redirect to tools page
 
-
+      return;
     }.bind(this))
     // log any request errors
     .catch(function(err, msg) {
