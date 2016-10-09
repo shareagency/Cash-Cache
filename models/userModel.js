@@ -4,10 +4,15 @@ var mongoose = require('mongoose')
 
 // new Schema
 var UserSchema = Schema({
+	email: {
+		type: String,
+		required: true,
+		unique: true
+	},
 	username: {
 		type: String,
 		required: true,
-		unique: true // make sure the username is not repeated again
+		unique: true
 	},
 	password: {
 		type: String,
