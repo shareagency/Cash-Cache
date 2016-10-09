@@ -19,7 +19,7 @@ export default React.createClass({
     }else{
       this.setState({
         navDisplay2: "none"
-      }) 
+      })
     }
 
   },
@@ -47,9 +47,9 @@ export default React.createClass({
                   <a className="cash-nav" href="/">Home</a>
                   <a className="cash-nav" href="/about">About</a>
                   <a className="cash-nav" href="/tools">Tools</a>
-                  <Link to={{ pathname: '/login'}}>
-                    <span className="cash-nav">Log In</span>
-                  </Link>
+
+                  <Link to="/login" className="cash-nav">Login</Link>
+
                   <a className="cash-nav" href="/signup">Sign Up</a>
               </div>
 
