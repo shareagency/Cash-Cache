@@ -31,7 +31,7 @@ export class Signup extends React.Component {
                 subtitle="Required Fields *"
               />
               <CardText>
-                <Input type='email' label='Email' name='name' required={true} ref='username' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
+                <Input type='email' label='Email' name='name' required={true} ref='email' value={this.state.email} onChange={this.handleChange.bind(this, 'email')}/>
                 <Input type='text' label='Username' name='name' required={true} ref='username' value={this.state.username} onChange={this.handleChange.bind(this, 'username')}/>
                 <Input type='password' label='Password' required={true} value={this.state.password} onChange={this.handleChange.bind(this, 'password')}/>
               </CardText>
