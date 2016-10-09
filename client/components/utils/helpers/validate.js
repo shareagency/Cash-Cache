@@ -60,6 +60,39 @@ export default {
 
       valData.isValid = true;
       cb(valData);
+  },
+
+  signup: function(email, username, password, cb) {
+      var valData = {
+        isValid: false,
+        valMsg: {emailErrMsg: '', passwordErrMsg: '', usernameErrMsg: ''}
+      };
+
+      let emailErrMsg = validateEmail(email);
+      let usernameErrMsg = validateUsername(username);
+      let passwordErrMsg = validatePassword(password);
+
+      // validate password
+      if (emailErrMsg !== false) {
+        valData.valMsg.emailErrMsg = emailErrMsg;
+        cb(valData);
+        return;
+      }
+      // validate username
+      if (usernameErrMsg !== false) {
+        valData.valMsg.usernameErrMsg = usernameErrMsg;
+        cb(valData);
+        return;
+      }
+      // validate password
+      if (passwordErrMsg !== false) {
+        valData.valMsg.passwordErrMsg = passwordErrMsg;
+        cb(valData);
+        return;
+      }
+
+      valData.isValid = true;
+      cb(valData);
   }
 
 };

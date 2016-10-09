@@ -30,6 +30,37 @@ export default {
       });
 
     });
+  },
+
+  signup: function(email, username, password) {
+    return new Promise(function(resolve, reject) {
+
+      axios.post('/signup', {
+        email: email,
+        username: username,
+        password: password
+      })
+      .then(function (response) {
+        let msg = response.data.message;
+        if (msg !== 'success') {
+          if (msg === 'email already in use') {
+             resolve({ valErr: {emailErrMsg: msg, passwordErrMsg: '', usernameErrMsg: ''}});
+            return
+          }
+          if (msg === 'This username is already in use') {
+            resolve({ valErr: {emailErrMsg: '', passwordErrMsg: '', usernameErrMsg: msg}});
+            return
+          }
+        }
+
+        console.log('Message: ', msg);
+        resolve(response.data);
+      })
+      .catch(function (err) {
+        reject(err);
+      });
+
+    });
   }
 
 };
