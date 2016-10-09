@@ -146,9 +146,6 @@ export default React.createClass({
 
       </div>
 
-      <img className="piggy" src="assets/images/piggy.png" />
-
-      <img className="graph-foot" src="assets/images/graph_grade2.png" />
       </div>
     )
   }

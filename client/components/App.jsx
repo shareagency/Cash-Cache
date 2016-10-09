@@ -1,8 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
-// import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from "react-bootstrap";
-// import {LinkContainer} from 'react-router-bootstrap';
 
 export default React.createClass({
   // Here we set a generic state associated with the text being searched for
@@ -29,7 +27,7 @@ export default React.createClass({
   render() {
     return (
       <div className="page-wrap">
-      
+
         <div className="circle"></div>
         <img className="logo-dollar" src="assets/images/cc_grade.png" />
         <span className="logo-text">CASH CACHE</span>
@@ -82,6 +80,9 @@ export default React.createClass({
           {this.props.children}
         </div>
 
+        <img className="piggy" src="assets/images/piggy.png" />
+
+        <img className="graph-foot" src="assets/images/graph_grade2.png" />
 
       </div>
 
