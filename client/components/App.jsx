@@ -5,16 +5,38 @@ import { Link } from 'react-router';
 // import {LinkContainer} from 'react-router-bootstrap';
 
 export default React.createClass({
+  // Here we set a generic state associated with the text being searched for
+  getInitialState() {
+    return {
+      navDisplay2: "none"
+    }
+  },
+
+  navToggle() {
+
+    if(this.state.navDisplay2 == "none") {
+      this.setState({
+        navDisplay2: ""
+      })
+    }else{
+      this.setState({
+        navDisplay2: "none"
+      }) 
+    }
+
+  },
+
   render() {
     return (
       <div className="page-wrap">
+      
         <div className="circle"></div>
         <img className="logo-dollar" src="assets/images/cc_grade.png" />
         <span className="logo-text">CASH CACHE</span>
 
         <nav className="header navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-            <button id="nav-switch" type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false" aria-controls="navbar">
+            <button id="nav-switch" type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false" aria-controls="navbar" onClick={this.navToggle}>
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
@@ -37,7 +59,7 @@ export default React.createClass({
 
         </nav>
 
-        <div id="navbar1" style={{display: "none"}}>
+        <div id="navbar1" style={{display: this.state.navDisplay2}}>
           <ul className="resp-nav-wrap">
             <li role="separator" className="divider"></li>
             <li className="li-pad"><a className="resp-cash-nav" href="/">Home</a></li>

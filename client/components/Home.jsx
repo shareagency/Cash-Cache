@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-//import {helpers} from './utils/helpers.js';
 // Helper Function
 var helpers = require('./utils/helpers.js');
 
@@ -80,44 +79,6 @@ export default React.createClass({
     }
 
   },
-
-  // When a user submits... 
-  // handleClick: function(){
-
-  //   console.log("CLICK");
-
-  //   //check to make sure all of the fields have been filled out
-  //   if (this.state.term === "" || this.state.startDate === "" || this.state.endDate === "") {
-  //     alert('Please fill out the entire form.');
-  //   } else {
-  //     console.log("UPDATED");
-
-  //     // Run the helper query for articles
-  //     helpers.runQuery(this.state.term, this.state.startDate, this.state.endDate)
-  //       .then(function(data){
-  //         //checks if there are results sent back from api
-  //         if (data != this.state.results)
-  //         {
-  //           console.log("Search" , data);
-
-  //           var queryArr = data.data.response.docs; //set response to a variable
-  //           var newResults = []; //create empty array to push to
-  //           //loop through response and push each article to the array
-  //           for(var i=0; i<queryArr.length; i++){
-  //             newResults.push(queryArr[i]);
-  //           }
-
-  //           //update the results state with the retrieved articles
-  //           this.setState({
-  //             results: newResults
-  //           })
-
-  //         }
-  //       }.bind(this))
-        
-  //   }
-
-  // },
 
   render() {
     return (

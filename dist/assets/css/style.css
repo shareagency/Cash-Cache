@@ -176,6 +176,16 @@ h3 {
     }
 }
 
+.penny-img{
+  position: absolute;
+  top: 6px;
+  left: 88px;
+  width: 113px;
+  height: 113px;
+  background: url("../images/penny.png") no-repeat;
+  z-index: 103;
+}
+
 .circle{
   position: absolute;
   top: 0;
