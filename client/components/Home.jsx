@@ -1,85 +1,50 @@
 import React from 'react'
 import { Link } from 'react-router'
-// import {helpers} from './utils/helpers.js';
+//import {helpers} from './utils/helpers.js';
 // Helper Function
 var helpers = require('./utils/helpers.js');
 
 export default React.createClass({
   // Here we set a generic state associated with the text being searched for
-  getInitialState: function(){
+  getInitialState(){
     return {
       email: "",
       username: "",
       password: "",
-      strength: "signal-color"
+      strength: "signal-color",
+      checked: "unchecked",
+      checkImg: "hide terms-check"
     }
   },
 
   // This function will respond to the user input 
-  handleBlur: function(event){
+  handleBlur(event){
 
-    // Here we create syntax to capture any change in text to the query terms (pre-search).
-    // See this Stack Overflow answer for more details: 
-    // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
-    // var newState = {};
-    // newState[event.target.id] = event.target.value;
-    // this.setState(newState);
-    // Run the helper query for articles
     var sentVal = event.target.value;
     var sentId = event.target.name;
+
+    console.log(sentVal, sentId);
 
     if(sentId == "username"){
       helpers.checkUser(sentVal)
         .then(function(data){
           //checks if there are results sent back from api
           console.log(data);
-          // if (data != this.state.results)
-          // {
-          //   console.log("Search" , data);
 
-          //   var queryArr = data.data.response.docs; //set response to a variable
-          //   var newResults = []; //create empty array to push to
-          //   //loop through response and push each article to the array
-          //   for(var i=0; i<queryArr.length; i++){
-          //     newResults.push(queryArr[i]);
-          //   }
-
-          //   //update the results state with the retrieved articles
-          //   this.setState({
-          //     results: newResults
-          //   })
-
-          // }
         });
       } else if(sentId == "email"){
         helpers.checkEmail(sentVal)
         .then(function(data){
           //checks if there are results sent back from api
           console.log(data);
-          // if (data != this.state.results)
-          // {
-          //   console.log("Search" , data);
 
-          //   var queryArr = data.data.response.docs; //set response to a variable
-          //   var newResults = []; //create empty array to push to
-          //   //loop through response and push each article to the array
-          //   for(var i=0; i<queryArr.length; i++){
-          //     newResults.push(queryArr[i]);
-          //   }
-
-          //   //update the results state with the retrieved articles
-          //   this.setState({
-          //     results: newResults
-          //   })
-
-          // }
         }); 
       }
 
   },
 
   // This function will respond to the user input 
-  handleChange: function(event){
+  handleChange(event){
 
     var passVal = event.target.value;
 
@@ -95,6 +60,23 @@ export default React.createClass({
       this.setState({
         strength: "signal-color strong"
       })  
+    }
+
+  },
+
+  checkToggle(){
+
+    if(this.state.checked == "checked") {
+      this.setState({
+        checked: "unchecked",
+        checkImg: "hide terms-check"
+      })
+    }
+    else{
+      this.setState({
+        checked: "checked",
+        checkImg: "show terms-check"
+      })
     }
 
   },
@@ -190,8 +172,8 @@ export default React.createClass({
               <div className="form-group">
                 <div className="row">
                   <p className="terms-text">I have read and agree to the <span><a className="terms-link" href="#">Cash Cache terms of use.</a></span></p>
-                  <div id="terms" className="user-square-check">
-                    <img id="terms-select" className="hide terms-check" data-check="unchecked" src="assets/images/cc_grade.png" />
+                  <div id="terms" className="user-square-check" onClick={this.checkToggle}>
+                    <img id="terms-select" className={this.state.checkImg} data-check={this.state.checked} src="assets/images/cc_grade.png" />
                   </div>
                   <button type="submit" className="btn sub-sign" id="signup"></button>
                 </div>

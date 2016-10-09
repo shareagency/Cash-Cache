@@ -1,4 +1,4 @@
-//var User = require('../../../models/userModel');
+//var User = require('../../../models/userModel.js');
 
 // Helper Functions (in this case the only one is runQuery)
 var helpers = {
