@@ -18,11 +18,6 @@ export class Login extends React.Component {
     console.log('Password:', this.state.password);
   };
 
-  handleSignUp = () => {;
-    console.log('Username:', this.state.username);
-    console.log('Password:', this.state.password);
-  };
-
   render() {
     return(
       <div className="container">
@@ -41,7 +36,6 @@ export class Login extends React.Component {
 
               <CardActions>
                 <Button label='Log In' raised primary onMouseUp={this.handleLogin.bind(this)}/>
-                <Button label='Sign Up' raised primary onMouseUp={this.handleSignUp.bind(this)}/>
               </CardActions>
             </Card>
           </div>
