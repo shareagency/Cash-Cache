@@ -5,6 +5,7 @@ var RememberMeStrategy = require('passport-remember-me').Strategy;
 // Load up the user model
 var bcrypt = require('bcrypt-nodejs');
 var User  = require('../models/userModel');
+var Promise = require('bluebird');
 
 module.exports = function(passport) {
 
@@ -36,40 +37,73 @@ module.exports = function(passport) {
   passport.use(
     'local-signup',
     new LocalStrategy({
-        // by default, local strategy uses username and password, we will override with email
         usernameField: 'username',
         passwordField: 'password',
         passReqToCallback: true // allows us to pass back the entire request to the callback
       },
       function(req, username, password, done) {
-        User
-          .findOne({
-            username: username
-          })
-          .exec(function(err, user) {
-            if (err) done(err);
-            // If username already found in database
-            if (user !== null) {
-              return done(null, false, {message: 'That username is already taken.'});
-            }
-            // Username validation
+
+        // check for duplicate email before checking for username
+        function checkEmail(email) {
+          return new Promise(function(resolve, reject) {
+            User.count({email: email}, function (err, count){
+              if(count > 0){
+                console.log('Email already exists!');
+                reject('email already in use');
+              }else{
+                console.log('Valid Email');
+                resolve(email)
+              }
+            });
+          });
+        };
+
+        // check email then check username & save
+        checkEmail(req.body.email)
+        .then(function checkUserAndSave(email) {
+
+          // find any existing users by username
+          User.findOne({username: username}).exec()
+          // add inserted coin
+          .then(function(user) {
             var regex = /^[a-zA-Z0-9]+$/;
             if(!username.match(regex)) {
-              return done(null, false, {message: 'Please only use alpha-numeric characters with no spaces'});
+              return done({
+                message: 'Please only use alpha-numeric characters with no spaces'
+              }, false)
             }
             // Create if not
             var user = new User({
+              email: email,
               username: username,
               password: bcrypt.hashSync(password, null, null) // use the generateHash function in our user model
             });
-            user.save(function(err) {
-              if (err) {
-                console.log(err);
-              }
-              console.log('Saved');
-              return done(null, user);
-            });
+            return user.save();
           })
+          // log & respond updated user
+          .then(function(user) {
+            console.log('new user: ', user);
+            done(null, user)
+          })
+          // catch username & save errs any errors
+          .catch(function(err) {
+            console.log('ERROR: ', err);
+            return done({
+              err: err,
+              message: 'This username is already in use'
+            }, false)
+
+          })
+
+        })
+
+        // catch any many email validation errors
+        .catch(function(errMsg) {
+          done({
+            message: errMsg
+          }, false);
+        })
+
       })
   );
 
