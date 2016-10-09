@@ -128,13 +128,13 @@ module.exports = function(passport) {
             username: username
           })
           .exec(function(err, user) {
-            if (err) done(err);
+            if (err) done({err: err, message: 'Error finding user'});
             // Check if username is found
             if (user == null)
-              return done(null, false, {message: 'No user found.'});
+              return done({message: 'Username not found!'}, false);
             // Check if passwords match
             if (!bcrypt.compareSync(password, user.password))
-              return done(null, false, {message: 'Oops! Wrong password.'});
+              return done({message: 'Password did not match!'}, false);
             // If all well
             return done(null, user);
           })
