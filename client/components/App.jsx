@@ -19,7 +19,7 @@ export default React.createClass({
     }else{
       this.setState({
         navDisplay2: "none"
-      })
+      }) 
     }
 
   },
@@ -27,7 +27,7 @@ export default React.createClass({
   render() {
     return (
       <div className="page-wrap">
-
+        <div id="coin-img" className="penny-img"></div>
         <div className="circle"></div>
         <img className="logo-dollar" src="assets/images/cc_grade.png" />
         <span className="logo-text">CASH CACHE</span>
@@ -47,9 +47,9 @@ export default React.createClass({
                   <a className="cash-nav" href="/">Home</a>
                   <a className="cash-nav" href="/about">About</a>
                   <a className="cash-nav" href="/tools">Tools</a>
-
-                  <Link to="/login" className="cash-nav">Login</Link>
-
+                  <Link to={{ pathname: '/login'}}>
+                    <span className="cash-nav">Log In</span>
+                  </Link>
                   <a className="cash-nav" href="/signup">Sign Up</a>
               </div>
 
