@@ -1,14 +1,13 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-export default React.createClass({
-  // Here we set a generic state associated with the text being searched for
-  getInitialState() {
-    return {
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
       navDisplay2: "none"
-    }
-  },
+    };
+  }
 
   navToggle() {
 
@@ -22,7 +21,7 @@ export default React.createClass({
       })
     }
 
-  },
+  }
 
   render() {
     return (
@@ -91,4 +90,5 @@ export default React.createClass({
 
     )
   }
-})
+
+}

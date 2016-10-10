@@ -1,23 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React, { Component } from 'react';
+import { Link } from 'react-router';
 // Helper Function
 var helpers = require('./utils/helpers.js');
 
-export default React.createClass({
-  // Here we set a generic state associated with the text being searched for
-  getInitialState(){
-    return {
+export default class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
       email: "",
       username: "",
       password: "",
       strength: "signal-color",
       checked: "unchecked",
       checkImg: "hide terms-check"
-    }
-  },
+    };
+  }
 
   // This function will respond to the user input 
-  handleBlur(event){
+  handleBlur(event) {
 
     var sentVal = event.target.value;
     var sentId = event.target.name;
@@ -40,10 +40,10 @@ export default React.createClass({
         }); 
       }
 
-  },
+  }
 
   // This function will respond to the user input 
-  handleChange(event){
+  handleChange(event) {
 
     var passVal = event.target.value;
 
@@ -61,9 +61,9 @@ export default React.createClass({
       })  
     }
 
-  },
+  }
 
-  checkToggle(){
+  checkToggle() {
 
     if(this.state.checked == "checked") {
       this.setState({
@@ -78,7 +78,7 @@ export default React.createClass({
       })
     }
 
-  },
+  }
 
   render() {
     return (
@@ -149,4 +149,5 @@ export default React.createClass({
       </div>
     )
   }
-})
+
+}

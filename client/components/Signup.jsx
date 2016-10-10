@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Input from 'react-toolbox/lib/input';
-import {Button} from 'react-toolbox/lib/button';
+import { Button } from 'react-toolbox/lib/button';
 import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import requests from './utils/helpers/requests';
 import validate from './utils/helpers/validate';
 
-export class Signup extends React.Component {
+export default class Signup extends Component {
   constructor() {
     super();
     this.state = {
