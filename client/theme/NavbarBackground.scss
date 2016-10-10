@@ -1,0 +1,91 @@
+:global {
+	
+	/* Navbar */
+	.navbar-inverse .navbar-brand {
+		color: #E8F5E9; /* Green 50 */
+		padding-left: 110px;
+		font-size: 30px;
+	}
+
+	.navbar-inverse {
+		margin-top: 20px;
+		background-color: #4CAF50; /* Green 500 */
+		border-color: #4CAF50; /* Green 500 */
+	}
+
+	.navbar-inverse .navbar-collapse {
+		border-color: #4CAF50; /* Green 500 */
+	}
+
+	.collapsing, .collapse.in {
+		border-color: #4CAF50; /* Green 500 */
+		margin-top: 65px;
+	}
+
+	.navbar-inverse .navbar-nav {
+		&>li>a {
+			color: #E8F5E9; /* Green 50 */
+		}
+		&>.active>a, &>.active>a:focus, &>.active>a:hover {
+			background-color: #1B5E20; /* Green 900 */
+			color: #fff;
+			border-radius: 4px;
+		}
+	}
+
+	.navbar-inverse .navbar-toggle {
+		border-radius: 50%;
+		border-color: #fff;
+		&:hover, &:focus {
+			background-color: #1B5E20; /* Green 900 */
+		}
+	}
+
+	div.circle {
+	  position: absolute;
+	  top: -20px;
+	  background-color: #ffffff;
+	  width: 90px;
+	  height: 90px;
+	  border: 3px solid #4CAF50; /* Green 500 */
+	  border-radius: 50%;
+	  z-index: 101;
+	  img {
+	  	position: absolute;
+	  	top: 15%;
+	  	left: 15%;
+	  	width: 70%;
+	  	height: 70%;
+	  }
+	}
+
+	/* Background */
+	body {
+		background-color: #E8F5E9; /* Green 50 */
+	}
+
+	#piggy{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  opacity: 0.5;
+  z-index: -2;
+}
+
+	#graph-foot{
+	  position: fixed;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	  /*opacity: 0.5;*/
+	  z-index: -1;
+	}
+	
+	/* Fixes card issue */
+	.row {
+		padding-bottom: 10px;
+	}
+
+}
+

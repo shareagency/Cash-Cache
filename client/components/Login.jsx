@@ -64,6 +64,7 @@ export default class Login extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-offset-2 col-md-8">
+
             <Card id="card-login">
               <CardTitle
                 avatar="assets/images/cc_grade.png"
@@ -83,6 +84,7 @@ export default class Login extends Component {
                 <Button label='Log In' raised primary onMouseUp={this.validate.bind(this)}/>
               </CardActions>
             </Card>
+
           </div>
         </div>
       </div>
