@@ -1,0 +1,17 @@
+nav {
+	margin-top: 20px;
+}
+
+.navbar-toggle {
+	border-radius: 50%;
+}
+
+div.circle {
+  margin-top: -10px;
+  background-color: #ffffff;
+  width: 125px;
+  height: 125px;
+  border: 3px solid #008000;
+  border-radius: 50%;
+  z-index: 101;
+}
