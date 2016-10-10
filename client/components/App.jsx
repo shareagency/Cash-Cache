@@ -1,12 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 export default React.createClass({
   // Here we set a generic state associated with the text being searched for
   getInitialState() {
     return {
-      navDisplay2: "none"
+      navDisplay2: "none",
+      animate: "",
+      animateTarget: "",
+      coins: []
     }
   },
 
@@ -24,10 +28,46 @@ export default React.createClass({
 
   },
 
+  handleAdd(event) {
+    var coinVal = event.target.id;
+
+    var newCoins = [];
+
+    newCoins.push(coinVal);
+    
+    this.setState({coins: newCoins});
+    console.log(newCoins);
+  },
+
+  handleRemove(i) {
+    var newCoins = this.state.coins.slice();
+    newCoins.splice(i, 1);
+    this.setState({coins: newCoins});
+  },
+
+  componentDidUpdate() {
+    console.log("UPDATED");  
+  },
+
   render() {
+    console.log(this.state.coins);
+    var coins = this.state.coins.map((coin, i) => (
+      <div key={coin} id="coin-img" className={coin} onClick={() => this.handleRemove(i)}></div>
+    ));
+
     return (
       <div className="page-wrap">
-        <div id="coin-img" className="penny-img"></div>
+        <ReactCSSTransitionGroup
+          transitionName={ {
+            enter: 'enter',
+            enterActive: 'enterActive',
+            leave: 'leave',
+            leaveActive: 'leaveActive'
+          } }
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={800}>
+          {coins}
+        </ReactCSSTransitionGroup>
         <div className="circle"></div>
         <img className="logo-dollar" src="assets/images/cc_grade.png" />
         <span className="logo-text">CASH CACHE</span>
@@ -77,17 +117,21 @@ export default React.createClass({
           </ul>
         </div>
 
+        <button id="penny" onClick={this.handleAdd}>Add Penny</button>
+        <button id="nickel" onClick={this.handleAdd}>Add Nickel</button>
+        <button id="dime" onClick={this.handleAdd}>Add Dime</button>
+        <button id="quarter" onClick={this.handleAdd}>Add Quarter</button>
+
         <div className="content">
           {this.props.children}
         </div>
 
-        <img className="piggy" src="assets/images/piggy.png" />
+        <img className="piggy-front" src="assets/images/piggy_front.png" />
+        <img className="piggy" src="assets/images/piggy_light.png" />
 
         <img className="graph-foot" src="assets/images/graph_grade2.png" />
 
       </div>
-
-
 
     )
   }
