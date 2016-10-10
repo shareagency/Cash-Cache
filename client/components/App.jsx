@@ -1,32 +1,17 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+//var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Layout } from 'react-toolbox';
+import Navbar from './NavbarBackground';
 
-export default React.createClass({
-  // Here we set a generic state associated with the text being searched for
-  getInitialState() {
-    return {
-      navDisplay2: "none",
-      animate: "",
-      animateTarget: "",
-      coins: []
-    }
-  },
-
-  navToggle() {
-
-    if(this.state.navDisplay2 == "none") {
-      this.setState({
-        navDisplay2: ""
-      })
-    }else{
-      this.setState({
-        navDisplay2: "none"
-      }) 
-    }
-
-  },
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      navDisplay2: "none"
+    };
+  }
 
   handleAdd(event) {
     var coinVal = event.target.id;
@@ -56,18 +41,9 @@ export default React.createClass({
     ));
 
     return (
+
       <div className="page-wrap">
-        <ReactCSSTransitionGroup
-          transitionName={ {
-            enter: 'enter',
-            enterActive: 'enterActive',
-            leave: 'leave',
-            leaveActive: 'leaveActive'
-          } }
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={800}>
-          {coins}
-        </ReactCSSTransitionGroup>
+        
         <div className="circle"></div>
         <img className="logo-dollar" src="assets/images/cc_grade.png" />
         <span className="logo-text">CASH CACHE</span>
@@ -117,11 +93,6 @@ export default React.createClass({
           </ul>
         </div>
 
-        <button id="penny" onClick={this.handleAdd}>Add Penny</button>
-        <button id="nickel" onClick={this.handleAdd}>Add Nickel</button>
-        <button id="dime" onClick={this.handleAdd}>Add Dime</button>
-        <button id="quarter" onClick={this.handleAdd}>Add Quarter</button>
-
         <div className="content">
           {this.props.children}
         </div>
@@ -133,6 +104,29 @@ export default React.createClass({
 
       </div>
 
+      <div>
+        <Navbar />
+        <ReactCSSTransitionGroup
+          transitionName={ {
+            enter: 'enter',
+            enterActive: 'enterActive',
+            leave: 'leave',
+            leaveActive: 'leaveActive'
+          } }
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={800}>
+          {coins}
+        </ReactCSSTransitionGroup>
+        <button id="penny" onClick={this.handleAdd}>Add Penny</button>
+        <button id="nickel" onClick={this.handleAdd}>Add Nickel</button>
+        <button id="dime" onClick={this.handleAdd}>Add Dime</button>
+        <button id="quarter" onClick={this.handleAdd}>Add Quarter</button>
+        <div className="container">
+          {this.props.children}
+        </div>
+      </div>
+
     )
   }
-})
+
+}
