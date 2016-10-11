@@ -64,7 +64,7 @@ export default class Signup extends Component {
       }
       console.log('Login response: ', JSON.stringify(resData));
       // TODO: redirect to user page
-
+      window.location = window.location.origin + resData.redirect;
 
     }.bind(this))
     // log any request errors

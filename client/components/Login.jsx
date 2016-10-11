@@ -50,6 +50,7 @@ export default class Login extends Component {
       }
       console.log('Login response: ', JSON.stringify(resData));
       // TODO: redirect to tools page
+      window.location = window.location.origin + resData.redirect;
 
       return;
     }.bind(this))
