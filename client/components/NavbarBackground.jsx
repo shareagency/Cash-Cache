@@ -14,9 +14,9 @@ export default class NavbarBackground extends Component {
   }
 
   handleAdd(event) {
-    var coinVal = event.target.id;
+    const coinVal = event.target.id;
 
-    var newCoins = [];
+    const newCoins = [];
 
     newCoins.push(coinVal);
     
@@ -25,14 +25,22 @@ export default class NavbarBackground extends Component {
   }
 
   handleRemove(i) {
-    var newCoins = this.state.coins.slice();
+    const newCoins = this.state.coins.slice();
     newCoins.splice(i, 1);
     this.setState({coins: newCoins});
   }
 
+  componentDidUpdate() {
+    const coinCheck = this.state.coins[0];
+
+    if(coinCheck == 'penny' || coinCheck == 'nickel' || coinCheck == 'dime' || coinCheck == 'quarter'){
+      setTimeout(this.handleRemove(0), 1500);
+    }  
+  }
+
   render() {
     console.log(this.state.coins);
-    var coins = this.state.coins.map((coin, i) => (
+    const coins = this.state.coins.map((coin, i) => (
       <div key={coin} id="coin-img" className={coin} onClick={() => this.handleRemove(i)}></div>
     ));
 
