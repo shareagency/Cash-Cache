@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { Col } from 'react-bootstrap';
 import { List, ListItem, ListSubHeader } from 'react-toolbox/lib/list';
 import Signup from './Signup';
+import auth from '../services/Authentication';
 import '../theme/Home.scss';
 // Helper Function
 var helpers = require('./utils/helpers.js');
@@ -16,8 +17,20 @@ export default class Home extends Component {
       password: "",
       strength: "signal-color",
       checked: "unchecked",
-      checkImg: "hide terms-check"
+      checkImg: "hide terms-check",
+      loggedIn: false // auth.loggedIn()
     };
+    this.updateAuth = this.updateAuth.bind(this);
+  }
+
+  updateAuth(loggedIn) {
+    this.setState({
+      loggedIn: loggedIn
+    })
+  }
+
+  componentWillMount() {
+    // auth.onChange = this.updateAuth;
   }
 
   // This function will respond to the user input 
@@ -89,6 +102,11 @@ export default class Home extends Component {
       <div className="row">
 
         <Col md={6}>
+          {this.state.loggedIn ? (
+            <h1>Logged In</h1>
+          ) : (
+            <h1>Logged Out</h1>
+          )}
           <h1>Start Saving Today!</h1>
           <ul className="features">
             <li>Cash Cache is a smart piggy bank with features and tools to help you track and grow your savings.</li>

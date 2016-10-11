@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { hashHistory } from 'react-router';
 import Input from 'react-toolbox/lib/input';
 import { Button } from 'react-toolbox/lib/button';
 import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
@@ -9,7 +10,10 @@ export default class Login extends Component {
   constructor() {
     super();
     this.state = {
-      username: '', password: '', usernameErrMsg: '', passwordErrMsg: ''
+      username: '',
+      password: '',
+      usernameErrMsg: '',
+      passwordErrMsg: ''
     };
   }
 
@@ -50,7 +54,7 @@ export default class Login extends Component {
       }
       console.log('Login response: ', JSON.stringify(resData));
       // TODO: redirect to tools page
-      window.location = window.location.origin + resData.redirect;
+      hashHistory.push(resData.redirect);
 
       return;
     }.bind(this))

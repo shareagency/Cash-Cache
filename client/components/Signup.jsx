@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { hashHistory } from 'react-router';
 import Input from 'react-toolbox/lib/input';
 import { Button } from 'react-toolbox/lib/button';
 import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
@@ -64,7 +65,7 @@ export default class Signup extends Component {
       }
       console.log('Login response: ', JSON.stringify(resData));
       // TODO: redirect to user page
-      window.location = window.location.origin + resData.redirect;
+      hashHistory.push(resData.redirect);
 
     }.bind(this))
     // log any request errors

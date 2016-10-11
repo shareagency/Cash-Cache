@@ -43,7 +43,7 @@ export default {
       .then(function (response) {
         let msg = response.data.message;
         if (msg !== 'success') {
-          if (msg === 'email already in use') {
+          if (msg === 'Email already in use') {
              resolve({ valErr: {emailErrMsg: msg, passwordErrMsg: '', usernameErrMsg: ''}});
             return
           }
@@ -61,6 +61,27 @@ export default {
       });
 
     });
-  }
+  },
+
+  getToken() {
+    return (typeof window !== "undefined") ? localStorage.token : undefined;
+  },
+
+  logout(cb) {
+    get('/auth/signout')
+      .then((g) => {
+        delete localStorage.token
+        if (cb) cb()
+        this.onChange(false)
+      }).catch((err) => {
+        console.log(err);
+      });
+  },
+
+  loggedIn() {
+    return !!((typeof window !== "undefined") ? localStorage.token : undefined)
+  },
+
+  onChange() {}
 
 };
