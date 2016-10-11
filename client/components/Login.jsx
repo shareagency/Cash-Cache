@@ -23,7 +23,6 @@ export default class Login extends Component {
 
   // submit form on enter
   handleBtnPress = (e) => {
-    console.log(e.charCode);
     if (e.charCode == 13) {
         this.validate();
       }

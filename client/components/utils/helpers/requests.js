@@ -1,9 +1,11 @@
 import axios from 'axios';
 import Promise from 'bluebird';
+import { hashHistory } from 'react-router';
 
 export default {
 
   login: function(username, password) {
+    var _this = this;
     return new Promise(function(resolve, reject) {
 
       axios.post('/login', {
@@ -23,9 +25,17 @@ export default {
             return
           }
         }
+
+        // Authentication
+        localStorage.token = Math.random().toString(36).substring(7);
+        _this.onChange(true);
+
         resolve(response.data);
       })
       .catch(function (err) {
+        // Authentication
+        _this.onChange(false);
+
         reject(err);
       });
 
@@ -63,22 +73,19 @@ export default {
     });
   },
 
-  getToken() {
-    return (typeof window !== "undefined") ? localStorage.token : undefined;
-  },
-
-  logout(cb) {
-    get('/auth/signout')
-      .then((g) => {
+  logout: function() {
+    var _this = this;
+    axios.get('/logout')
+      .then((response) => {
         delete localStorage.token
-        if (cb) cb()
-        this.onChange(false)
+        _this.onChange(false)
+        hashHistory.push('/');
       }).catch((err) => {
         console.log(err);
       });
   },
 
-  loggedIn() {
+  loggedIn: function() {
     return !!((typeof window !== "undefined") ? localStorage.token : undefined)
   },
 
