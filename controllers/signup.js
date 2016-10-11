@@ -7,7 +7,7 @@ module.exports = function(req, res, next) {
 		req.logIn(user, function(err) {
 			if (err) return res.json({err: err, message: 'error loggin in'});
 			return res.json({
-				redirect: '/success',
+				redirect: '#/tools',
 				'message': 'success'
 			});
 		});
