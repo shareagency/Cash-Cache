@@ -27,7 +27,7 @@ export default {
         }
 
         // Authentication
-        localStorage.token = Math.random().toString(36).substring(7);
+        sessionStorage.token = Math.random().toString(36).substring(7);
         _this.onChange(true);
 
         resolve(response.data);
@@ -77,7 +77,7 @@ export default {
     var _this = this;
     axios.get('/logout')
       .then((response) => {
-        delete localStorage.token
+        delete sessionStorage.token
         _this.onChange(false)
         hashHistory.push('/');
       }).catch((err) => {
@@ -86,7 +86,7 @@ export default {
   },
 
   loggedIn: function() {
-    return !!((typeof window !== "undefined") ? localStorage.token : undefined)
+    return !!((typeof window !== "undefined") ? sessionStorage.token : undefined)
   },
 
   onChange() {}
