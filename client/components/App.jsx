@@ -31,16 +31,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar loggedIn={this.state.loggedIn} />
         <div className="container">
-          {this.state.loggedIn ? (
-            <div>
-              <h1>Logged In</h1>
-              <Button label='Log Out' raised primary onMouseUp={this.logout} />
-            </div>
-          ) : (
-            <h1>Logged Out</h1>
-          )}
           {this.props.children}
         </div>
       </div>

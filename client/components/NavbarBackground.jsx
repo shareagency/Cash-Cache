@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import '../theme/NavbarBackground.scss';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
+import auth from './utils/helpers/requests';
+import uuid from 'node-uuid';
 
 export default class NavbarBackground extends Component {
+
+  logout() {
+    auth.logout.call(auth)
+  }
 
   render() {
     return (
@@ -24,15 +30,24 @@ export default class NavbarBackground extends Component {
               <IndexLinkContainer to="/" activeHref="active">
                 <NavItem>Home</NavItem>
               </IndexLinkContainer>
-              <LinkContainer to="/about" activeHref="active">
-                <NavItem>About</NavItem>
-              </LinkContainer>
-              <LinkContainer to="/tools" activeHref="active">
-                <NavItem>Tools</NavItem>
-              </LinkContainer>
-              <LinkContainer to="/login" activeHref="active">
-                <NavItem>Login</NavItem>
-              </LinkContainer>
+              {this.props.loggedIn ? (
+                [
+                  <LinkContainer key={uuid.v4()} to="/tools" activeHref="active">
+                    <NavItem>Tools</NavItem>
+                  </LinkContainer>,
+                  <NavItem key={uuid.v4()} onMouseUp={this.logout}>Log Out</NavItem>
+                ]
+              ) : (
+                [
+                  <LinkContainer key={uuid.v4()} to="/about" activeHref="active">
+                    <NavItem>About</NavItem>
+                  </LinkContainer>,
+                  <LinkContainer key={uuid.v4()} to="/login" activeHref="active">
+                    <NavItem>Login</NavItem>
+                  </LinkContainer>
+                ]
+              )}
+              
             </Nav>
           </Navbar.Collapse>
         </Navbar>
