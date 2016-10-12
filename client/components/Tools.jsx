@@ -110,9 +110,9 @@ export default class Tools extends Component {
     }
     // otherwise show total saved & total coins
     return (
-      <div>
-        <h3>Total Saved: {this.handleTotal()}</h3>
-        <h3>Total Coins: {coinData.reduce((a, b) => a + b, 0)}</h3>
+      <div className='box-total'>
+        <h3>Total Saved: &#36;{this.handleTotal()}</h3>
+        <h3>Cached Coins: {coinData.reduce((a, b) => a + b, 0)}</h3>
       </div>
     )
   }

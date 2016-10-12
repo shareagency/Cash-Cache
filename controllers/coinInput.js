@@ -6,6 +6,7 @@ module.exports = function(req, res) {
   // determin coin value
   var coinValue = req.body.coinValue;
   var coinType = req.body.coinType;
+  var username = req.body.username;
   console.log('posted coin value: ',coinValue);
 
   // if coin value could not be determined log and respond with error
@@ -19,7 +20,7 @@ module.exports = function(req, res) {
   }
 
   socket.emit('coin', {
-    username: 'username',
+    username: username,
     coin: coinType
   })
 
