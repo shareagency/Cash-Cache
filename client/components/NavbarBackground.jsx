@@ -71,11 +71,11 @@ export default class NavbarBackground extends Component {
           </div>
           <Navbar.Collapse>
             <Nav pullRight>
-              <IndexLinkContainer to="/" activeHref="active">
-                <NavItem>Home</NavItem>
-              </IndexLinkContainer>
               {this.props.loggedIn ? (
                 [
+                  <IndexLinkContainer key={uuid.v4()} to="/" activeHref="active">
+                    <NavItem>Dashboard</NavItem>
+                  </IndexLinkContainer>,
                   <LinkContainer key={uuid.v4()} to="/tools" activeHref="active">
                     <NavItem>Tools</NavItem>
                   </LinkContainer>,
@@ -83,6 +83,9 @@ export default class NavbarBackground extends Component {
                 ]
               ) : (
                 [
+                  <IndexLinkContainer key={uuid.v4()} to="/" activeHref="active">
+                    <NavItem>Home</NavItem>
+                  </IndexLinkContainer>,
                   <LinkContainer key={uuid.v4()} to="/about" activeHref="active">
                     <NavItem>About</NavItem>
                   </LinkContainer>,
