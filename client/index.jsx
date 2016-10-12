@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Tools from './components/Tools';
+import About from './components/About';
 
 render((
   <Router history={hashHistory}>
@@ -13,6 +14,7 @@ render((
       <IndexRoute component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/tools" component={Tools} />
+      <Route path="/about" component={About} />
     </Route>
   </Router>
 ), document.getElementById('app'))

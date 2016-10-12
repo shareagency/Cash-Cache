@@ -87,6 +87,10 @@ h3 {
   width: 100%;
 }
 /*end navbar overrides*/
+.page-wrap{
+  position: relative;
+}
+
 .pad-right-125{
   padding-right: 125px;
 }
@@ -176,16 +180,6 @@ h3 {
     }
 }
 
-.penny-img{
-  position: absolute;
-  top: 6px;
-  left: 88px;
-  width: 113px;
-  height: 113px;
-  background: url("../images/penny.png") no-repeat;
-  z-index: 103;
-}
-
 .circle{
   position: absolute;
   top: 0;
@@ -240,7 +234,16 @@ h3 {
   bottom: 0;
   left: 0;
   width: 300px;
-  opacity: 0.5;
+  /*opacity: 0.5;*/
+  z-index: 97;
+}
+
+.piggy-front{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  /*opacity: 0.5;*/
   z-index: 99;
 }
 
@@ -413,4 +416,76 @@ h3 {
 #card-login {
   position: relative;
   top: 100px;
+}
+
+.penny{
+  position: absolute;
+  top: 6px;
+  left: 88px;
+  width: 113px;
+  height: 113px;
+  background: url("./dist/assets/images/penny.png") no-repeat;
+  background-size: 113px 113px;
+  z-index: 103;
+}
+
+.nickel{
+  position: absolute;
+  top: 6px;
+  left: 88px;
+  width: 113px;
+  height: 113px;
+  background: url("../images/nickel.png") no-repeat;
+  background-size: 113px 113px;
+  z-index: 103;
+}
+
+.dime{
+  position: absolute;
+  top: 6px;
+  left: 88px;
+  width: 113px;
+  height: 113px;
+  background: url("../images/dime.png") no-repeat;
+  background-size: 113px 113px;
+  z-index: 103;
+}
+
+.quarter{
+  position: absolute;
+  top: 6px;
+  left: 88px;
+  width: 113px;
+  height: 113px;
+  background: url("../images/quarter.png") no-repeat;
+  background-size: 113px 113px;
+  z-index: 103;
+}
+
+.enter {
+  opacity: 0.01;
+}
+
+.enter.enterActive {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.leave {
+  top: 6px;
+  width: 113px;
+  height: 113px;
+/*  z-index: 98;*/
+}
+
+.leave.leaveActive {
+  /*top: calc(100%);*/
+  top: calc(95vh);
+  overflow: auto;
+  left: 115px;
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  z-index: 98;
+  transition: all 800ms linear;
 }

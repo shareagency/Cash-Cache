@@ -49,7 +49,7 @@
 	  height: 90px;
 	  border: 3px solid #4CAF50; /* Green 500 */
 	  border-radius: 50%;
-	  z-index: 101;
+	  /*z-index: 101;*/
 	  img {
 	  	position: absolute;
 	  	top: 15%;
@@ -64,13 +64,20 @@
 		background-color: #E8F5E9; /* Green 50 */
 	}
 
+	#piggy-front{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  z-index: -2;
+}
+
 	#piggy{
   position: fixed;
   bottom: 0;
   left: 0;
   width: 300px;
-  opacity: 0.5;
-  z-index: -2;
+  z-index: -4;
 }
 
 	#graph-foot{
@@ -85,6 +92,80 @@
 	/* Fixes card issue */
 	.row {
 		padding-bottom: 10px;
+	}
+
+	/* Styling for coin animation*/
+
+	.penny{
+  position: absolute;
+  top: 6px;
+  left: 88px;
+  width: 80px;
+  height: 80px;
+  background: url("/assets/images/penny.png") no-repeat;
+  background-size: 80px 80px;
+  z-index: 1;
+	}
+
+	.nickel{
+	  position: absolute;
+	  top: 6px;
+	  left: 88px;
+	  width: 80px;
+	  height: 80px;
+	  background: url("/assets/images/nickel.png") no-repeat;
+	  background-size: 80px 80px;
+	  z-index: 1;
+	}
+
+	.dime{
+	  position: absolute;
+	  top: 6px;
+	  left: 88px;
+	  width: 80px;
+	  height: 80px;
+	  background: url("/assets/images/dime.png") no-repeat;
+	  background-size: 80px 80px;
+	  z-index: 1;
+	}
+
+	.quarter{
+	  position: absolute;
+	  top: 6px;
+	  left: 88px;
+	  width: 80px;
+	  height: 80px;
+	  background: url("/assets/images/quarter.png") no-repeat;
+	  background-size: 80px 80px;
+	  z-index: 1;
+	}
+
+	.enter {
+	  opacity: 0;
+	}
+
+	.enter.enterActive {
+	  opacity: 1;
+	  transition: opacity 500ms ease-in;
+	}
+
+	.leave {
+	  top: 6px;
+	  width: 80px;
+	  height: 80px;
+	/*  z-index: 98;*/
+	}
+
+	.leave.leaveActive {
+	  /*top: calc(100%);*/
+	  top: calc(94vh);
+	  overflow: auto;
+	  left: 120px;
+	  width: 50px;
+	  height: 50px;
+	  background-size: 50px 50px;
+	  z-index: -3;
+	  transition: all 800ms linear;
 	}
 
 }

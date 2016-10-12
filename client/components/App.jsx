@@ -29,13 +29,16 @@ export default class App extends Component {
   }
 
   render() {
+
     return (
+
       <div>
         <Navbar loggedIn={this.state.loggedIn} />
         <div className="container">
           {this.props.children}
         </div>
       </div>
+
     )
   }
 
