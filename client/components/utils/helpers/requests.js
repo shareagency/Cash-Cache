@@ -89,6 +89,21 @@ export default {
     return !!((typeof window !== "undefined") ? sessionStorage.token : undefined)
   },
 
+  getUserAndCoins: function(cb) {
+
+    axios.get('/coin')
+    .then((response) => {
+      let userData = response.data;
+      cb(false, userData);
+      return;
+    })
+    .catch((err) => {
+      cb(err);
+      return;
+    });
+
+  },
+
   onChange() {}
 
 };
