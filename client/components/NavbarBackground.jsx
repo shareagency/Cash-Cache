@@ -38,6 +38,7 @@ export default class NavbarBackground extends Component {
     if(coinCheck == 'penny' || coinCheck == 'nickel' || coinCheck == 'dime' || coinCheck == 'quarter'){
       this.handleRemove(0);
     }  
+  }
 
   render() {
     const coins = this.state.coins.map((coin, i) => (
