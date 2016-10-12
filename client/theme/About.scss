@@ -1,0 +1,32 @@
+:global {
+
+  .about-img{
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .smart-pig{
+    margin: 0 auto;
+    max-width: 550px;
+    height: 512px;
+    background: url("/assets/images/piggy_smart_light.png") no-repeat;
+    background-size: 100% auto;
+  }
+
+  .pie-chart{
+    margin: 0 auto;
+    max-width: 450px;
+    height: 475px;
+    background: url("/assets/images/pie_chart.png") no-repeat;
+    background-size: 100% auto;
+  }
+
+  .money{
+    margin: 0 auto;
+    max-width: 600px;
+    height: 378px;
+    background: url("/assets/images/money.png") no-repeat;
+    background-size: 100% auto;
+  }
+
+}
