@@ -11,6 +11,7 @@ var isLoggedIn = require('../controllers/isLoggedIn');
 var signup = require('../controllers/signup');
 var login = require('../controllers/login');
 var coinInput = require('../controllers/coinInput');
+var coinController = require('../controllers/coinController');
 
 // =====================================
 // HOME PAGE (with login links) ========
@@ -51,5 +52,10 @@ router.get('/logout', function(req, res) {
 // ===== coin input from Raspberry Pi server =====
 // ===============================================
 router.post('/coin', coinInput);
+
+// ===============================================
+// ============ get coins for client =============
+// ===============================================
+router.get('/coin', coinController);
 
 module.exports = router;

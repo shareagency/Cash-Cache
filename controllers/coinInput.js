@@ -18,11 +18,15 @@ module.exports = function(req, res) {
     return;
   }
 
+  socket.emit('coin', {
+    username: 'username',
+    coin: coinType
+  })
+
   // find user by username
-  User.find({username: 'user'}).exec()
+  User.findOne({username: 'username'}).exec()
   // add inserted coin
-  .then(function(users) {
-    var user = users[0]
+  .then(function(user) {
     console.log('USER: ',user)
     user.coins[coinType] = user.coins[coinType] + 1;
     return user.save();
