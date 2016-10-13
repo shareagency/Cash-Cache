@@ -13,7 +13,7 @@
     "url": "git+https://github.com/mattbajorek/Cash-Cache.git"
   },
   "engines": {
-    "node": "4.2.0"
+    "node": "6.7.0"
   },
   "author": "Matt Bajorek, Jeff Abraham, Adam Mattas",
   "license": "MIT",
