@@ -35,7 +35,9 @@ export default class App extends Component {
       <div>
         <Navbar loggedIn={this.state.loggedIn} />
         <div className="container">
-          {this.props.children}
+          {this.props.children && React.cloneElement(this.props.children, {
+            loggedIn: this.state.loggedIn
+          })}
         </div>
       </div>
 

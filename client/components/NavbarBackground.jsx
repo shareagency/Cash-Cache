@@ -76,9 +76,6 @@ export default class NavbarBackground extends Component {
                   <IndexLinkContainer key={uuid.v4()} to="/" activeHref="active">
                     <NavItem>Dashboard</NavItem>
                   </IndexLinkContainer>,
-                  <LinkContainer key={uuid.v4()} to="/tools" activeHref="active">
-                    <NavItem>Tools</NavItem>
-                  </LinkContainer>,
                   <NavItem key={uuid.v4()} onMouseUp={this.logout}>Log Out</NavItem>
                 ]
               ) : (

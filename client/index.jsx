@@ -13,7 +13,6 @@ render((
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="/login" component={Login} />
-      <Route path="/tools" component={Tools} />
       <Route path="/about" component={About} />
     </Route>
   </Router>
