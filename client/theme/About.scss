@@ -1,8 +1,23 @@
 :global {
 
+  section:focus{
+    outline: none;
+  }
+
   .about-img{
     margin-top: 30px;
     width: 100%;
+  }
+
+  .tab-back-active{
+    background-color: #1B5E20 !important;
+    text-shadow: 1px 1px 2px #4CAF50, 0 0 25px #E8F5E9, 0 0 5px #E8F5E9 !important;
+    flex-grow: 1;
+  }
+
+  .tab-back-inactive{
+    background-color: #4CAF50;
+    flex-grow: 1;
   }
 
   .about-tab{
