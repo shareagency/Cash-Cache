@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Col } from 'react-bootstrap';
-import { List, ListItem, ListSubHeader } from 'react-toolbox/lib/list';
 import {Tab, Tabs} from 'react-toolbox';
-import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
+import { Card } from 'react-toolbox/lib/card';
 import '../theme/About.scss';
 
 export default class About extends Component {
@@ -17,7 +16,7 @@ export default class About extends Component {
   }
 
   handleTabChange = (index) => {
-    console.log("INDEX", index);
+    //console.log("INDEX", index);
     this.setState({index});
     switch(index) {
       case 0:
