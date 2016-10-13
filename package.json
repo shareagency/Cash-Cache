@@ -6,7 +6,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "nodemon bin/www -i components",
-    "start:prod": "webpack --config webpack.config.prod.js && node bin/www"
+    "start:prod": "nodemon bin/www -i components"
   },
   "repository": {
     "type": "git",
