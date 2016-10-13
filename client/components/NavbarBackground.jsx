@@ -54,7 +54,7 @@ export default class NavbarBackground extends Component {
             leave: 'leave',
             leaveActive: 'leaveActive'
           } }
-          transitionEnterTimeout={500}
+          transitionEnterTimeout={800}
           transitionLeaveTimeout={800}>
           {coins}
         </ReactCSSTransitionGroup>
