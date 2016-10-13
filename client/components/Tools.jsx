@@ -11,7 +11,8 @@ export default class Tools extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      coinData: [], username: ''
+      coinData: [],
+      username: ''
     };
   }
 
@@ -60,7 +61,6 @@ export default class Tools extends Component {
       if (index === 3) total += (num * 25);
     })
     return parseFloat(total/100).toFixed( 2 );
-
   }
 
   renderData() {
@@ -123,7 +123,8 @@ export default class Tools extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
-            <Goals />
+            <Goals total={this.handleTotal()} />
+            <h1>Breakdown of Coins</h1>
             {this.renderData()}
           </div>
         </div>

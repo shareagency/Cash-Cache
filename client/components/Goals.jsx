@@ -16,14 +16,22 @@ export default class Goals extends Component {
   handleChange = (slider, value) => {
     const newState = {};
     newState[slider] = value;
+    newState['now'] = this.calculatePercentage(value);
     this.setState(newState);
+  };
+
+  calculatePercentage = (value) => {
+    var percent = this.props.total/value*100;
+    var now = (percent <= 100) ? percent : 100;
+    var round = Number(Math.round(now+'e2')+'e-2') // rounds to two decimals
+    return round;
   };
 
   componentWillMount () {
     setTimeout(() => {
       this.setState({
-        now: 40
-      })
+        now: this.calculatePercentage(this.state.slider)
+      });
     }, 1000);
   }
 
