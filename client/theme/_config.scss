@@ -1,4 +1,5 @@
 @import "~react-toolbox/lib/colors";
+@import "~react-toolbox/lib/globals";
 
 //-- Color configuration for _globals.scss
 // $color-divider: $palette-grey-200;
@@ -10,3 +11,5 @@ $color-primary: $palette-green-700;
 $color-primary-dark: $palette-green-900;
 // $color-accent: $palette-pink-a200;
 // $color-accent-dark: $palette-pink-700;
+
+$slider-input-width: 7 * $unit;

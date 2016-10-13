@@ -1,7 +1,7 @@
 var User = require('../models/userModel');
 
 module.exports = function(req, res) {
-  let username = req.user.username;
+  var username = req.user.username;
   console.log('Coins requested');
   if (!username) {
     res.json({
@@ -14,8 +14,8 @@ module.exports = function(req, res) {
   User.findOne({username: username}).exec()
   // add inserted coin
   .then(function(user) {
-    let newUser = {};
-    let coins = user.coins;
+    var newUser = {};
+    var coins = user.coins;
     newUser.coins = [coins.pennies, coins.nickels, coins.dimes, coins.quarters]
     newUser.username = user.username;
     return newUser;
