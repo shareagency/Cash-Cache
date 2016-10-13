@@ -12,7 +12,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['', '.scss', '.css', '.js', '.js', '.json'],
+    extensions: ['', '.scss', '.css', '.js', '.jsx', '.json'],
     modulesDirectories: [
       'node_modules',
       path.resolve(__dirname, './node_modules')
