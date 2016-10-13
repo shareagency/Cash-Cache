@@ -1,0 +1,10 @@
+@import "~react-toolbox/lib/globals";
+
+:global {
+	#dollar-sign {
+		position: absolute;
+		right: 7rem;
+		padding: 0.8rem 0;
+    font-size: 1.6rem;
+	}
+}

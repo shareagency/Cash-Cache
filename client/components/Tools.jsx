@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import {Pie as PieChart} from 'react-chartjs-2';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
 import '../theme/Tools.scss';
-import io from 'socket.io-client'
+import io from 'socket.io-client';
 import requests from './utils/helpers/requests';
-
+import Goals from './Goals';
 
 export default class Tools extends Component {
 
@@ -123,6 +123,7 @@ export default class Tools extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
+            <Goals />
             {this.renderData()}
           </div>
         </div>
