@@ -5,18 +5,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: __dirname,
-  devtool: 'inline-source-map',
-  entry: [
-    'webpack-hot-middleware/client',
-    './client/index.jsx'
-  ],
+  entry: ['./client/index.jsx'],
   output: {
     path: require('path').resolve('./dist'),
     filename: 'bundle.js',
     publicPath: '/'
   },
   resolve: {
-    extensions: ['', '.scss', '.css', '.js' ,'.jsx', '.json'],
+    extensions: ['', '.scss', '.css', '.js', '.jsx', '.json'],
     modulesDirectories: [
       'node_modules',
       path.resolve(__dirname, './node_modules')
@@ -53,10 +49,10 @@ module.exports = {
       filename: 'vendor.bundle.js',
       minChunks: Infinity
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-    })
+    }),
   ]
 }
