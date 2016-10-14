@@ -11,10 +11,11 @@ export default class Landing extends Component {
           <Col md={6}>
             <h1>Start Saving Today!</h1>
             <ul className="features">
-              <li>Cash Cache is a smart piggy bank with features and tools to help you track and grow your savings.</li>
-              <li>Set goals for yourself and share your achievements with your friends and family members on social media.</li>
-              <li>Customize your profile with inspirational imagery and notes to stay motivated and keep your eye on the prize.</li>
+              <li>Cash Cache is a smart piggy bank with features and tools to help children and teens become smart and frequent savers.</li>
+              <li>Use the Cash Cache dashboard to establish attainable savings goals and track the growth of your savings.</li>
+              <li>Stay engaged with your investments through our visually logical graphs that chart your progress.</li>
               <li>Gain access to helpful tips and information to assist you along your savings journey.</li>
+              <li>Start your FREE Cash Cache account in only a few seconds!</li>
             </ul>
           </Col>
 

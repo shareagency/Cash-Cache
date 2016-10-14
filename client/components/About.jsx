@@ -42,13 +42,13 @@ export default class About extends Component {
           <Card>
             <Tabs index={this.state.index} onChange={this.handleTabChange}>
               <Tab className="tab-back-inactive" activeClassName="tab-back-active" label='Smart Piggy Bank'>
-                <small className="about-tab">Cash Cache is a smart piggy bank with features and tools to help children and teens track and grow their savings. The Cash Cache app can be used with our unique coin collector designed to transmit and save your deposits directly to your FREE Cash Cache account. This straightforward application also allows for deposits to be manually added to you user acoount without the use of the optional coin collector.
+                <small className="about-tab">Cash Cache is a smart piggy bank with features and tools to help children and teens track and grow their savings. The Cash Cache app can be used with our unique coin collector designed to transmit and save your deposits directly to your FREE Cash Cache account. This straightforward application also allows for deposits to be manually added to you user account without the use of the optional coin collector.
                 <br/><br/>Parents have found Cash Cache to be a useful tool for teaching their children lessons about the importance of having a consistent savings regimen. Cash Cache not only helps create a conducive environment for setting goals, but encourages further engagement through the visual representation of progress and achievements.
                 <br/><br/>Our mission is to create valuable savings tools that are simple to use and easy to comprehend. Cash Cache is proud to make these tools free and accessible to any person that can benefit from them.
                 </small>
               </Tab>
               <Tab className="tab-back-inactive" activeClassName="tab-back-active" label='Track Savings'>
-                <small className="about-tab">Set goals for yourself and share your achievements with your friends and family members on social media.
+                <small className="about-tab">Your Free Cash Cache account will equip you with the tools you need to become a smart and frequent saver.<br/><br/>Are you saving money for your college education? Or are you simply saving your allowance for a new video game? With Cash Cache you can easily set goals and watch as your deposits transform your aspirations into reality. This helpful application will keep you informed by calculating precisely how much money you have saved. Cash Cache will keep you motivated by displaying how close you are to reaching your savings goals.<br/><br/>Want to know exactly how many pennies, nickels, dimes, and quarters you have in your posession? This smart piggy bank is even intelligent enough to remember how many of each coin you have in your growing bankroll.<br/><br/>Like all animals, this piggy will get hungry. Be sure you feed him often!
                 </small>
               </Tab>
               <Tab className="tab-back-inactive" activeClassName="tab-back-active" label='Tips About Saving'>
