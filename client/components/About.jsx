@@ -38,7 +38,7 @@ export default class About extends Component {
       <div className="row">
 
         <Col md={6}>
-          <h1>About Cash Cache</h1>
+          <br/>
           <Card>
             <Tabs index={this.state.index} onChange={this.handleTabChange}>
               <Tab className="tab-back-inactive" activeClassName="tab-back-active" label='Smart Piggy Bank'>

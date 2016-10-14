@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Card, CardTitle, CardText } from 'react-toolbox/lib/card';
+import { Col } from 'react-bootstrap';
 import {Pie as PieChart} from 'react-chartjs-2';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
 import '../theme/Tools.scss';
@@ -133,9 +135,17 @@ export default class Tools extends Component {
     }
     // otherwise show total saved & total coins
     return (
-      <div className='box-total'>
-        <h3>Total Saved: &#36;{this.handleTotal()}</h3>
-        <h3>Cached Coins: {coinData.reduce((a, b) => a + b, 0)}</h3>
+      <div>
+        <CardTitle
+          avatar="assets/images/bag.png"
+        >
+          <h3>Total Saved: &#36;{this.handleTotal()}</h3>
+        </CardTitle>
+        <CardTitle
+          avatar="assets/images/net.png"
+        >
+          <h3>Cached Coins: {coinData.reduce((a, b) => a + b, 0)}</h3>
+        </CardTitle>        
       </div>
     )
   }
@@ -160,16 +170,33 @@ export default class Tools extends Component {
           {coins}
         </ReactCSSTransitionGroup>
         <div className="container">
+          <br/>
           <div className="row">
-            <div className="col-md-6 col-md-offset-3">
-              <Goals total={this.handleTotal()} />
-              <h1>Breakdown of Coins</h1>
-              {this.renderData()}
-            </div>
+
+            <Col md={6}>
+              <Card>
+                <CardText className="title">
+                  <h1>Set Your Goal</h1>
+                </CardText>
+                <Goals total={this.handleTotal()} />
+                {this.renderStatus()}
+              </Card>              
+            </Col>
+
+            <Col md={6}>
+              <Card>
+                <CardText className="title">
+                  <h1>Breakdown of Coins</h1>
+                </CardText>
+                {this.renderData()}
+              </Card>
+            </Col>
+
           </div>
+
           <div className="row">
             <div className="col-md-6 col-md-offset-3 text-center">
-              {this.renderStatus()}
+              
             </div>
           </div>
         </div>
