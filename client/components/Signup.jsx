@@ -79,7 +79,7 @@ export default class Signup extends Component {
       <Card id="card-login">
         <CardTitle
           avatar="assets/images/cc_grade.png"
-          title="Signup for our free service"
+          title="Signup for our FREE service"
           subtitle="Required Fields *"
         />
         <CardText>
