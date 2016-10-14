@@ -42,7 +42,7 @@ export default class About extends Component {
           <Card>
             <Tabs index={this.state.index} onChange={this.handleTabChange}>
               <Tab className="tab-back-inactive" activeClassName="tab-back-active" label='Smart Piggy Bank'>
-                <small className="about-tab">Cash Cache is a smart piggy bank with features and tools to help children and teens track and grow their savings. The Cash Cache app can be used with our unique coin collector designed to transmit and save your deposits directly to your FREE Cash Cache account. This straightforward application also allows for deposits to be manually added to you user acoount without the use of the optional coin collector.
+                <small className="about-tab">Cash Cache is a smart piggy bank with features and tools to help children and teens track and grow their savings. The Cash Cache app can be used with our unique coin collector designed to transmit and save your deposits directly to your FREE Cash Cache account. This straightforward application also allows for deposits to be manually added to you user account without the use of the optional coin collector.
                 <br/><br/>Parents have found Cash Cache to be a useful tool for teaching their children lessons about the importance of having a consistent savings regimen. Cash Cache not only helps create a conducive environment for setting goals, but encourages further engagement through the visual representation of progress and achievements.
                 <br/><br/>Our mission is to create valuable savings tools that are simple to use and easy to comprehend. Cash Cache is proud to make these tools free and accessible to any person that can benefit from them.
                 </small>
