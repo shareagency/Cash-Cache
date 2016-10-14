@@ -7,7 +7,8 @@
 var app = require('../server/server');
 
 // we set the port of the app
-var PORT = process.env.PORT || 3000
+var PORT = process.env.PORT || 3000;
+
 // set our app to listen to the port we set above
 var server = app.listen(PORT, function() {
 	// then save a log of the listening to our debugger.
