@@ -1,11 +1,13 @@
 :global {
 
 	h1, .h1 {
-		color: #212121; /* Grey 900 */
+		color: #fff;
+		margin-top: 10px;
+		text-align: center;
 	}
 
-	.features {
-		color: #424242; /* Grey 800 */
+	.title {
+		background-color: #388E3C; /* Green 700 */
 	}
 
 }
