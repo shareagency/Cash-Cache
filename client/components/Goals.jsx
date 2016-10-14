@@ -32,7 +32,7 @@ export default class Goals extends Component {
       this.setState({
         now: this.calculatePercentage(this.state.slider)
       });
-    }, 1000);
+    }, 600);
   }
 
   render() {
@@ -40,8 +40,7 @@ export default class Goals extends Component {
     var now = this.state.now;
 
     return (
-      <div>
-        <h1>Set Your Goal</h1>
+      <div className="holder">
         <div>
           <div id="dollar-sign">$</div>
           <Slider theme={sliderTheme} min={0} max={100} editable value={this.state.slider} onChange={this.handleChange.bind(this, 'slider')} />
