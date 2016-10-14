@@ -1,5 +1,5 @@
 :global {
-	
+
 	/* Navbar */
 	.navbar-inverse .navbar-brand {
 		color: #E8F5E9; /* Green 50 */
@@ -88,88 +88,10 @@
 	  /*opacity: 0.5;*/
 	  z-index: -1;
 	}
-	
+
 	/* Fixes card issue */
 	.row {
 		padding-bottom: 10px;
 	}
 
-	/* Styling for coin animation*/
-
-	.penny{
-	  position: absolute;
-	  top: 0px;
-	  left: 88px;
-	  width: 90px;
-	  height: 90px;
-	  background: url("/assets/images/penny.png") no-repeat;
-	  background-size: 90px 90px;
-	  z-index: 1;
-		}
-
-	.nickel{
-	  position: absolute;
-	  top: 0px;
-	  left: 88px;
-	  width: 90px;
-	  height: 90px;
-	  background: url("/assets/images/nickel.png") no-repeat;
-	  background-size: 90px 90px;
-	  z-index: 1;
-	}
-
-	.dime{
-	  position: absolute;
-	  top: 0px;
-	  left: 88px;
-	  width: 90px;
-	  height: 90px;
-	  background: url("/assets/images/dime.png") no-repeat;
-	  background-size: 90px 90px;
-	  z-index: 1;
-	}
-
-	.quarter{
-	  position: absolute;
-	  top: 0px;
-	  left: 88px;
-	  width: 90px;
-	  height: 90px;
-	  background: url("/assets/images/quarter.png") no-repeat;
-	  background-size: 90px 90px;
-	  z-index: 1;
-	}
-
-	.enter {
-	  left: -100px;
-	}
-
-	.enter.enterActive {
-	  left: 88px;
-	  transform: rotate(130deg);
-	  transition: all 800ms linear;
-	}
-
-	.leave {
-	  top: 1px;
-	  width: 90px;
-	  height: 90px;
-	  transform: rotate(131deg);
-	/*  z-index: 98;*/
-	}
-
-	.leave.leaveActive {
-	  /*top: calc(100%);*/
-	  top: calc(90vh);
-	  overflow: hidden;
-	  left: 120px;
-	  width: 50px;
-	  height: 50px;
-	  background-size: 50px 50px;
-	  z-index: -3;
-	  transform: rotate(300deg);
-	  transition: all 800ms linear;
-	}
-
 }
-

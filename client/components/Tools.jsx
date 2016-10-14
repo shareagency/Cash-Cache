@@ -5,6 +5,7 @@ import '../theme/Tools.scss';
 import io from 'socket.io-client';
 import requests from './utils/helpers/requests';
 import Goals from './Goals';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class Tools extends Component {
 
@@ -12,7 +13,8 @@ export default class Tools extends Component {
     super(props);
     this.state = {
       coinData: [],
-      username: ''
+      username: '',
+      coins: []
     };
   }
 
@@ -29,6 +31,7 @@ export default class Tools extends Component {
     console.log(socketData.username);
     let username = this.state.username;
     if (socketData.username === username) {
+      this.handleAdd(socketData.coin);
       this.getUserCoins();
     }
   }
@@ -61,6 +64,26 @@ export default class Tools extends Component {
       if (index === 3) total += (num * 25);
     })
     return parseFloat(total/100).toFixed( 2 );
+  }
+  // add coin to coins array to start animation
+  handleAdd(coin) {
+    const newCoins = [];
+    newCoins.push(coin);
+    this.setState({coins: newCoins});
+  }
+  // remove coin from coins state to complete animation
+  handleRemove(i) {
+    const newCoins = this.state.coins.slice();
+    newCoins.splice(i, 1);
+    this.setState({coins: newCoins});
+  }
+  // when component updates check for coin to be removed
+  componentDidUpdate() {
+    const coinCheck = this.state.coins[0];
+
+    if(coinCheck == 'pennies' || coinCheck == 'nickels' || coinCheck == 'dimes' || coinCheck == 'quarters'){
+      this.handleRemove(0);
+    }
   }
 
   renderData() {
@@ -118,22 +141,40 @@ export default class Tools extends Component {
   }
 
   render() {
+    // map coins array for animation
+    const coins = this.state.coins.map((coin, i) => (
+      <div key={coin} id="coin-img" className={coin}></div>
+    ));
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 col-md-offset-3">
-            <Goals total={this.handleTotal()} />
-            <h1>Breakdown of Coins</h1>
-            {this.renderData()}
+      <div>
+        <ReactCSSTransitionGroup
+          transitionName={ {
+            enter: 'enter',
+            enterActive: 'enterActive',
+            leave: 'leave',
+            leaveActive: 'leaveActive'
+          } }
+          transitionEnterTimeout={800}
+          transitionLeaveTimeout={800}>
+          {coins}
+        </ReactCSSTransitionGroup>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 col-md-offset-3">
+              <Goals total={this.handleTotal()} />
+              <h1>Breakdown of Coins</h1>
+              {this.renderData()}
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-md-6 col-md-offset-3 text-center">
-            {this.renderStatus()}
+          <div className="row">
+            <div className="col-md-6 col-md-offset-3 text-center">
+              {this.renderStatus()}
+            </div>
           </div>
         </div>
       </div>
+
     )
   }
 
