@@ -36,6 +36,11 @@ module.exports = {
       }
     ]
   },
+  postcss: [autoprefixer],
+  sassLoader: {
+    data: '@import "theme/_config.scss";',
+    includePaths: [path.resolve('./client')]
+  },
   plugins: [
     new ExtractTextPlugin('bundle.css', { allChunks: true }),
     new webpack.optimize.OccurrenceOrderPlugin(),
