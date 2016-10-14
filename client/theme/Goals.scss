@@ -1,8 +1,13 @@
 :global {
 	#dollar-sign {
 		position: absolute;
-		right: 7rem;
+		right: 5.5rem;
 		padding: 0.8rem 0;
     font-size: 1.6rem;
+	}
+	.holder {
+		position: relative;
+		width: 80%;
+		margin: 10px auto;
 	}
 }
