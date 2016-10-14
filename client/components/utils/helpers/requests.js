@@ -61,6 +61,10 @@ export default {
             resolve({ valErr: {emailErrMsg: '', passwordErrMsg: '', usernameErrMsg: msg}});
             return
           }
+          if (msg === 'email already in use') {
+            resolve({ valErr: {emailErrMsg: msg, passwordErrMsg: '', usernameErrMsg: ''}});
+            return
+          }
         }
 
         console.log('Message: ', msg);
