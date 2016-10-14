@@ -4,60 +4,21 @@ import '../theme/NavbarBackground.scss';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import auth from './utils/helpers/requests';
 import uuid from 'node-uuid';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class NavbarBackground extends Component {
 
   constructor() {
     super();
-    this.state = {
-      coins: []
-    };
   }
 
   logout() {
     auth.logout.call(auth)
   }
 
-  handleAdd(event) {
-    const coinVal = event.target.id;
-    const newCoins = [];
-    newCoins.push(coinVal);    
-    this.setState({coins: newCoins});
-  }
-
-  handleRemove(i) {
-    const newCoins = this.state.coins.slice();
-    newCoins.splice(i, 1);
-    this.setState({coins: newCoins});
-  }
-
-  componentDidUpdate() {
-    const coinCheck = this.state.coins[0];
-
-    if(coinCheck == 'penny' || coinCheck == 'nickel' || coinCheck == 'dime' || coinCheck == 'quarter'){
-      this.handleRemove(0);
-    }  
-  }
-
   render() {
-    const coins = this.state.coins.map((coin, i) => (
-      <div key={coin} id="coin-img" className={coin}></div>
-    ));
 
     return (
       <div>
-        <ReactCSSTransitionGroup
-          transitionName={ {
-            enter: 'enter',
-            enterActive: 'enterActive',
-            leave: 'leave',
-            leaveActive: 'leaveActive'
-          } }
-          transitionEnterTimeout={800}
-          transitionLeaveTimeout={800}>
-          {coins}
-        </ReactCSSTransitionGroup>
         <Navbar inverse>
           <Navbar.Header>
             <Navbar.Brand>
@@ -91,14 +52,10 @@ export default class NavbarBackground extends Component {
                   </LinkContainer>
                 ]
               )}
-              
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <button id="penny" onClick={this.handleAdd.bind(this)}>Add Penny</button>
-        <button id="nickel" onClick={this.handleAdd.bind(this)}>Add Nickel</button>
-        <button id="dime" onClick={this.handleAdd.bind(this)}>Add Dime</button>
-        <button id="quarter" onClick={this.handleAdd.bind(this)}>Add Quarter</button>
+
         {/* Background images */}
         <img id="piggy-front" src="assets/images/piggy_front.png" />
         <img id="piggy" src="assets/images/piggy_light.png" />
