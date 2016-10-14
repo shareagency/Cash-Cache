@@ -48,7 +48,7 @@ export default class About extends Component {
                 </small>
               </Tab>
               <Tab className="tab-back-inactive" activeClassName="tab-back-active" label='Track Savings'>
-                <small className="about-tab">Set goals for yourself and share your achievements with your friends and family members on social media.
+                <small className="about-tab">Your Free Cash Cache account will equip you with the tools you need to become a smart and frequent saver.<br/><br/>Are you saving money for your college education? Or are you simply saving your allowance for a new video game? With Cash Cache you can easily set goals and watch as your deposits transform your aspirations into reality. This helpful application will keep you informed by calculating precisely how much money you have saved. Cash Cache will keep you motivated by displaying how close you are to reaching your savings goals.<br/><br/>Want to know exactly how many pennies, nickels, dimes, and quarters you have in your posession? This smart piggy bank is even intelligent enough to remember how many of each coin you have in your growing bankroll.<br/><br/>Like all animals, this piggy will get hungry. Be sure you feed him often!
                 </small>
               </Tab>
               <Tab className="tab-back-inactive" activeClassName="tab-back-active" label='Tips About Saving'>
