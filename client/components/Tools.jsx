@@ -145,7 +145,7 @@ export default class Tools extends Component {
           avatar="assets/images/net.png"
         >
           <h3>Cached Coins: {coinData.reduce((a, b) => a + b, 0)}</h3>
-        </CardTitle>        
+        </CardTitle>
       </div>
     )
   }
@@ -173,14 +173,14 @@ export default class Tools extends Component {
           <br/>
           <div className="row">
 
-            <Col md={6}>
+            <Col md={6} className="card-goals">
               <Card>
                 <CardText className="title">
                   <h1>Set Your Goal</h1>
                 </CardText>
                 <Goals total={this.handleTotal()} />
                 {this.renderStatus()}
-              </Card>              
+              </Card>
             </Col>
 
             <Col md={6}>
@@ -196,7 +196,7 @@ export default class Tools extends Component {
 
           <div className="row">
             <div className="col-md-6 col-md-offset-3 text-center">
-              
+
             </div>
           </div>
         </div>
