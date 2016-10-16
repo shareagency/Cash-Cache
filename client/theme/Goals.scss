@@ -1,13 +1,25 @@
 :global {
+
 	#dollar-sign {
 		position: absolute;
 		right: 5.5rem;
 		padding: 0.8rem 0;
     font-size: 1.6rem;
 	}
+
 	.holder {
 		position: relative;
 		width: 80%;
 		margin: 10px auto;
 	}
+
+	.progress {
+		margin-top: 20px;
+		margin-bottom: 0;
+	}
+
+	h3, .h3 {
+		margin-top: 10px;
+	}
+
 }

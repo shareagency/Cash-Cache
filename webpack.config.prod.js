@@ -12,7 +12,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['', '.scss', '.css', '.js', '.js', '.json'],
+    extensions: ['', '.scss', '.css', '.js', '.jsx', '.json'],
     modulesDirectories: [
       'node_modules',
       path.resolve(__dirname, './node_modules')
@@ -35,6 +35,11 @@ module.exports = {
         loader: 'url-loader?limit=8192'
       }
     ]
+  },
+  postcss: [autoprefixer],
+  sassLoader: {
+    data: '@import "theme/_config.scss";',
+    includePaths: [path.resolve('./client')]
   },
   plugins: [
     new ExtractTextPlugin('bundle.css', { allChunks: true }),
