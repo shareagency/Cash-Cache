@@ -123,7 +123,7 @@ export default class Tools extends Component {
     let coinData = this.state.coinData
     // if not logged in render msg
     if (!sessionStorage.token) {
-      return <h1>Please sign up on the home page!</h1>
+      return <h3>Please sign up on the home page!</h3>
     }
     // if no coins have been saved render msg
     if (coinData.reduce((a, b) => a + b, 0) === 0) {
@@ -179,7 +179,9 @@ export default class Tools extends Component {
                   <h1>Set Your Goal</h1>
                 </CardText>
                 <Goals total={this.handleTotal()} />
-                {this.renderStatus()}
+                <div className="holder">
+                  {this.renderStatus()}
+                </div>
               </Card>              
             </Col>
 
