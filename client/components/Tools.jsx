@@ -173,7 +173,7 @@ export default class Tools extends Component {
           <br/>
           <div className="row">
 
-            <Col md={6} className="card-goals">
+            <Col md={6}>
               <Card>
                 <CardText className="title">
                   <h1>Set Your Goal</h1>

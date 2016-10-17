@@ -1,7 +1,11 @@
 # Cash Cache
 Final group project for Rutgers Coding Bootcamp.
 
-LIVE PREVIEW --> http://cash-cache.herokuapp.com/
+[LIVE PREVIEW](http://cash-cache.herokuapp.com/)
+
+![coin animation](https://github.com/mattbajorek/Cash-Cache/raw/master/doc_assets/merged-animation-1.gif)
+
+For coin accepter & raspberry pi information, see our [raspberry pi server docs](https://github.com/jefabrah/cash-cache-rpiserver)
 
 ## Screenshots
 
@@ -49,7 +53,7 @@ npm run start
 Here is a section of code that listens to raspberry pi signal inputs and sends a post request to the server.
 
 ```
-// coinInput is attached to pin 17, led to 18
+// coinInput is attaced to pin 17
 const requests = require('./requests'),
       GPIO = require('onoff').Gpio,
       coinInput = new GPIO(17, 'in', 'rising');
@@ -63,12 +67,8 @@ function handlePulse (err, state) {
     console.log('err: ', err);
     return;
   }
-  // if coinInput state does not equal 1 log
-  // & return out of function
-  if (state !== 1) {
-    console.log('State did not equal 1!?');
-    return;
-  }
+  // if state doesn't equal 1 return
+  if (state !== 1) return;
   // increment pulse count
   pulseCount++;
   // if pulsing started return
@@ -81,6 +81,9 @@ function handlePulse (err, state) {
     pulsing = false;
   }, 600)
 }
+
+// set the coinInput callback function to handlePulse
+coinInput.watch(handlePulse);
 ```
 Here is a section of code that uses React CSS Transition group to animate coins going into piggy bank.
 ```
