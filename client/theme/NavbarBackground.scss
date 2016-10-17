@@ -94,4 +94,12 @@
 		padding-bottom: 10px;
 	}
 
+	// media queries
+	$break-large: 1000px;
+
+	#piggy-front, #piggy {
+		@media screen and (max-width: $break-large) {
+			display: none;
+		}
+	}
 }
