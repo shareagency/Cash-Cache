@@ -3,7 +3,7 @@ Final group project for Rutgers Coding Bootcamp.
 
 [LIVE PREVIEW](http://cash-cache.herokuapp.com/)
 
-![coin animation](http://doc_assets/merged-animation-1.gif)
+![coin animation](https://github.com/mattbajorek/Cash-Cache/raw/master/doc_assets/merged-animation-1.gif)
 
 For coin accepter & raspberry pi information, see our [raspberry pi server docs](https://github.com/jefabrah/cash-cache-rpiserver)
 
