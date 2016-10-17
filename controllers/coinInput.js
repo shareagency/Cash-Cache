@@ -18,10 +18,12 @@ module.exports = function(req, res) {
     });
     return;
   }
-
-  socket.emit('coin', {
-    username: username,
-    coin: coinType
+  // emit inserted coin on all sockets
+  socket_connections.forEach(function emitCoinOnSockets(socket) {
+    socket.emit('coin', {
+      username: username,
+      coin: coinType
+    })
   })
 
   // find user by username

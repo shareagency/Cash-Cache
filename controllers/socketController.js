@@ -1,18 +1,17 @@
 
-var connections = [];
+global.socket_connections = [];
 
 module.exports = function (io) {
 
   io.sockets.on('connection', function (socket) {
-    global.socket = socket;
   	socket.once('disconnect', function() {
-  		connections.splice(connections.indexOf(socket), 1);
+  		socket_connections.splice(socket_connections.indexOf(socket), 1);
   		socket.disconnect();
-  		console.log("Disconnected: %s sockets remaining.", connections.length);
+  		console.log("Disconnected: %s sockets remaining.", socket_connections.length);
   	});
 
-  	connections.push(socket);
-      console.log("Connected: %s sockets connected.", connections.length);
+  	socket_connections.push(socket);
+      console.log("Connected: %s sockets connected.", socket_connections.length);
   });
 
 };
