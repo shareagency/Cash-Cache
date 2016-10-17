@@ -1,7 +1,7 @@
 :global {
 
 	.card-goals {
-		z-index: -2;
+		z-index: 2;
 	}
 
 	.loading-circle {
@@ -83,13 +83,13 @@
 
 	.leave.leaveActive {
 		/*top: calc(100%);*/
-		top: calc(90vh);
+		top: calc(100vh - 90px);
 		overflow: hidden;
-		left: 120px;
+		left: 117px;
 		width: 50px;
 		height: 50px;
 		background-size: 50px 50px;
-		z-index: -3;
+		z-index: -4;
 		transform: rotate(300deg);
 		transition: all 800ms linear;
 	}
