@@ -27,7 +27,7 @@ module.exports = function(req, res) {
   })
 
   // find user by username
-  User.findOne({username: 'username'}).exec()
+  User.findOne({username: username}).exec()
   // add inserted coin
   .then(function(user) {
     console.log('USER: ',user)
