@@ -13,7 +13,7 @@
     border-radius: 5px;
   }
 
-	/* Styling for coin animation*/
+  /* Styling for coin animation*/
 	$break-large: 1000px;
 	$coin-zindex-large: 11;
 	$coin-zindex-md: 99;
@@ -94,14 +94,22 @@
 
 	.leave.leaveActive {
 		/*top: calc(100%);*/
-		top: calc(90vh);
-		overflow: hidden;
-		left: 120px;
+		top: calc(100vh - 150px);
+		/*overflow: hidden;*/
+		left: 117px;
 		width: 50px;
 		height: 50px;
 		background-size: 50px 50px;
-		z-index: -3;
+		z-index: -4;
 		transform: rotate(300deg);
+		@media screen and (max-width: $break-large) {
+			top: calc(100% - 1px);
+			left: 88px;
+			width: 90px;
+			height: 90px;
+			background-size: 90px 90px;
+			z-index: $coin-zindex-large;
+		}
 		transition: all 800ms linear;
 	}
 }
