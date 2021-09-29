@@ -53,7 +53,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.static(process.cwd() + '/dist'));
 
 // Database configuration
-var uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb+srv://share:sharegroup@cashcache.s32xc.mongodb.net/cashcache';
+var uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/cashcache';
 mongoose.connect(uristring, function(err) {
   if (err)
     console.log ('ERROR connecting to: ' + uristring + '. ' + err);
