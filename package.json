@@ -13,8 +13,6 @@
     "start:prod": "node bin/www",
     "start:probuild": "webpack --config webpack.config.prod.js"
   },   
-    
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattbajorek/Cash-Cache.git"
