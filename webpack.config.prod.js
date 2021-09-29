@@ -12,7 +12,6 @@ module.exports = {
     path: require('path').resolve('./dist'),
     filename: 'bundle.js',
     publicPath: '/',
-    clean: true,
   },
   resolve: {
     extensions: ['', '.scss', '.css', '.js', '.jsx', '.json'],
