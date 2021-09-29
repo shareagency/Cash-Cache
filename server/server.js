@@ -9,6 +9,10 @@ var logger = require('morgan');
 var express = require('express');
 var app = express();
 
+// Cross-Origin Resource Sharing
+var cors = require('cors');
+app.use(cors());
+
 // Require mongoose and passport
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
