@@ -7,8 +7,8 @@
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "nodemon bin/www -i components",
     "start:prod": "node bin/www",
-    "start:probuild": "webpack --config webpack.config.prod.js"
-    "start": "node server/server.js",
+    "start:probuild": "webpack --config webpack.config.prod.js",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
