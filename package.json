@@ -11,11 +11,8 @@
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "nodemon bin/www -i components",
     "start:prod": "node bin/www",
-    "build": "webpack --config webpack.config.prod.js",
-    
-
-    
-    
+    "start:probuild": "webpack --config webpack.config.prod.js"
+  },   
     
   },
   "repository": {
