@@ -7,10 +7,7 @@ var logger = require('morgan');
 
 // Initialize Express app
 var express = require('express');
-var cors = require('cors');
 var app = express();
-
-app.use(cors({origin: true, credentials: true}));
 
 
 // Require mongoose and passport
@@ -56,7 +53,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.static(process.cwd() + '/dist'));
 
 // Database configuration
-var uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/cashcache';
+var uristring = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb+srv://share:sharegroup@cashcache.s32xc.mongodb.net/cashcache';
 mongoose.connect(uristring, function(err) {
   if (err)
     console.log ('ERROR connecting to: ' + uristring + '. ' + err);
