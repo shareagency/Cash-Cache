@@ -9,7 +9,7 @@ module.exports = {
      app: './client/index.jsx',
    },
   output: {
-    path: require('path').resolve('./public'),
+    path: require('path').resolve('./dist'),
     filename: 'bundle.js',
     publicPath: '/',
   },
