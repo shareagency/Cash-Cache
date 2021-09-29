@@ -7,10 +7,10 @@ var logger = require('morgan');
 
 // Initialize Express app
 var express = require('express');
+var cors = require('cors');
 var app = express();
 
 // Cross-Origin Resource Sharing
-var cors = require('cors');
 app.use(cors());
 
 // Require mongoose and passport
